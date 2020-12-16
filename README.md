@@ -16,3 +16,18 @@ Créer un blog avec :
     - Modération des commentaires
     - Rédaction des billets via WYSIWYG
     - Commentaires signalés qui remontent dans l'interface admin
+ 
+ /////////////////////////////////////////////////////////////////
+    1 er commit => 
+    - Affichage de tous les articles
+
+    - Cliquer sur lire la suite pour aller un article précis
+
+    - Afficher les commentaires associés à l'article
+
+    - S'identifier ou s'inscrire pour écrire un commentaire
+
+    - Ecrire un commentaire
+
+    - Affichage de ce commentaire
+//////////////////////////////////////////////////////////////
