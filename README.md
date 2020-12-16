@@ -18,7 +18,9 @@ Créer un blog avec :
     - Commentaires signalés qui remontent dans l'interface admin
  
  /////////////////////////////////////////////////////////////////
-    1 er commit => 
+   
+   1 er commit => 
+    
     - Affichage de tous les articles
 
     - Cliquer sur lire la suite pour aller un article précis
