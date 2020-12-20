@@ -4,6 +4,7 @@ require_once '/wamp64/www/blog/model/Manager.php';
 
 class CommentManager extends Manager
 {
+        //Fonction pour récupérer un commentaire selon le post
         public function getComments($postId)
     {
         $db = $this->dbConnect();

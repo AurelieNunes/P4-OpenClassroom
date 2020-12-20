@@ -4,9 +4,9 @@ $title = "Billet simple pour l'Alaska"; ?>
 
 <?php ob_start(); ?>
 
-<section class="framePost">
+<section class="listPosts d-flex justify-content-between">
 
-<?php
+	<?php
 
 // si compte bien créé, affiche message de confirmation à l'utilisateur
 if (isset($_GET['account-status']) && $_GET['account-status'] == 'account-successfully-created') {
@@ -17,39 +17,38 @@ if (isset($_GET['account-status']) && $_GET['account-status'] == 'account-succes
 while ($data = $posts->fetch()) {
 	if (!empty($data)) {
 ?>
-	
-	<div class="post">
-		<div class="headPost">
-			<h3>
-				<?= htmlspecialchars($data['title']); ?>
-				<em>le <?= $data['creation_date_fr']; ?></em>
-			</h3>
-		</div>
-		<div class="content">
-			<div class="chapters">
-			<?php
-				$extract = substr($data['content'], 0, 1000);
-				echo $extract . " ...";
-			?>
-			<br />
-				<div class="readMore">
-					<a href="index.php?action=post&amp;id=<?= $data['id']; ?>">Lire la suite ...</a>
+
+	<div class="card row text-white justify-content-center bg-primary mb-3" style="max-width: 20rem;">
+		<div class="card-header">le <?= $data['creation_date_fr']; ?></div>
+		<div class="card-body">
+			<h4 class="card-title"><?= htmlspecialchars($data['title']); ?></h4>
+			<p class="card-text">
+				<?php
+					$extract = substr($data['content'], 0, 1000);
+					echo $extract . " ...";
+				?>
+				<div class="link-ReadMore">
+					<a class="text-white nav-link" href="index.php?action=post&amp;id=<?= $data['id']; ?>">Lire la suite ...</a>
 				</div>
-			</div>
+				<svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200"
+				aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice"
+				viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+				<rect width="100%" height="100%" fill="#868e96"></rect>
+				<text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+				</svg>
+			</p>
 		</div>
 	</div>
 
-<?php
-
-	} else {
-		echo "Ce billet n'existe pas.";
-	}
-}
-	$posts->closeCursor();
-
-$posts->closeCursor();
-?>
-</div>
+	<div class="postNull">
+		<?php
+			} else {
+				echo "Ce billet n'existe pas.";
+			}
+		}
+		$posts->closeCursor();
+	?>
+	</div>
 
 </section>
 

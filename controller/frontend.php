@@ -8,6 +8,7 @@ use \blog\model\MemberManager;
 
 require_once '/wamp64/www/blog/model/Manager.php';
 
+//Fonction liste des posts
 function listPosts()
 {
 	$postManager = new PostManager(); // Création d'un objet
@@ -17,6 +18,7 @@ function listPosts()
     require('view/frontend/homeView.php');
 }
 
+//Fonction Récupération d'un post
 function post()
 {
     $postManager = new PostManager();
@@ -34,6 +36,7 @@ function post()
     require('view/frontend/postView.php');
 }
 
+//Fonction pour ajouter des commentaires
 function addComment($postId, $author, $comment)
 {
     $commentManager = new CommentManager();
@@ -52,6 +55,7 @@ function displaySubscribe() {
 	require('view/frontend/subscribeView.php');
 }
 
+//fonction Ajouter un membre
 function addMember($pseudo, $pass, $email) {
 	$memberManager = new MemberManager();
 

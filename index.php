@@ -2,6 +2,7 @@
 session_start();
 
 require '/wamp64/www/blog/controller/frontend.php';
+require '/wamp64/www/blog/controller/backend.php';
 require '/wamp64/www/blog/model/PostManager.php';
 require '/wamp64/www/blog/model/CommentManager.php';
 require '/wamp64/www/blog/model/MemberManager.php';
@@ -55,8 +56,54 @@ try {
 		}
 		elseif ($_GET['action'] == 'loginSubmit') {
 			loginSubmit(strip_tags($_POST['pseudo']), strip_tags($_POST['pass']));
+		}	
+		elseif ($_GET['action'] == 'admin-login-view') {
+			if (isset($_SESSION)) {
+				displayLoginAdmin();
+			}
 		}
-		
+		elseif ($_GET['action'] == 'adminLogin') {
+			loginAdmin();
+		}
+		elseif ($_GET['action'] == 'admin') {
+			if (isset($_SESSION) && $_SESSION['groups_id'] == '1') {
+				displayAdmin();
+			} else {
+				throw new Exception('Administrateur non identifié');
+			}
+		}
+		elseif ($_GET['action'] == 'updatePost') {
+			if (isset($_GET['id']) && $_GET['id'] > 0) {
+				if (isset($_SESSION) && $_SESSION['groups_id'] == '1') {
+					 displayUpdate();
+				}  
+	        } else {
+				throw new Exception('Administrateur non identifié');
+			}
+		}
+		elseif ($_GET['action'] == 'submitUpdate') {
+			submitUpdate($_POST['title'], $_POST['content'], $_GET['id']);
+		}
+		elseif ($_GET['action'] == 'createPost') {
+			if (isset($_SESSION) && $_SESSION['groups_id'] == '1') {
+				displayCreatePost();
+			} else {
+				throw new Exception('Administrateur non identifié');
+			}
+		}
+		elseif ($_GET['action'] == 'submitPost') {
+			if (!empty($_POST['title']) && !empty($_POST['content'])) {
+				newPost($_POST['title'], $_POST['content']);
+			} else {
+				throw new Exception('Contenu vide !');
+			}
+		}
+		elseif ($_GET['action'] == 'deletePost') {
+			removePost($_GET['id']);
+		}
+		elseif ($_GET['action'] == 'deleteComment') {
+			removeComment($_GET['id']);
+		}
 	}
 	else {
 	    listPosts();

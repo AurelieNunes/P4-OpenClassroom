@@ -10,20 +10,20 @@
     </head>
         
     <body>
-        <h1>Mon super blog !</h1>
-        <p><a href="index.php">Retour à la liste des billets</a></p>
-
-        <div class="news">
-            <h3>
-                <?= htmlspecialchars($post['title']) ?>
-                <em>le <?= $post['creation_date_fr'] ?></em>
-            </h3>
-            
+        <div class="container">
             <p>
-                <?= nl2br(htmlspecialchars($post['content'])) ?>
+                <a href="index.php">Retour à la liste des billets</a>
             </p>
-        </div>
 
+            <div class="card border-primary mb-4" style="max-width: 40rem;">
+                <div class="card-header">le <?= $post['creation_date_fr'] ?>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title"><?= htmlspecialchars($post['title']) ?></h4>
+                    <p class="card-text"><?= nl2br(htmlspecialchars($post['content'])) ?></p>
+                </div>
+            </div>
+            
         <h2>Commentaires</h2>
 
         <?php

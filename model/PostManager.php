@@ -5,6 +5,7 @@ require_once '/wamp64/www/blog/model/Manager.php';
 
 class PostManager extends Manager
 {
+    //fonction pour récupérer tous les posts
     public function getPosts()
 {
     $db = $this->dbConnect();
@@ -13,6 +14,7 @@ class PostManager extends Manager
     return $req;
 }
 
+    //fontcion pour récupérer un post précis
     public function getPost($postId)
 {
     $db = $this->dbConnect();
@@ -23,25 +25,32 @@ class PostManager extends Manager
     return $post;
 }
 
-public function updatePost($title, $content, $postId) {
+    //Fonction pour mettre à jour un post
+    public function updatePost($title, $content, $postId) {
     $db = $this->dbConnect();
     $req = $db->prepare('UPDATE posts SET title = ?, content = ?, update_date = NOW() WHERE id = ?');
-    $updated = $req->execute(array($title, $content, $postId));
+    $req->execute(array($title, $content, $postId));
+    $updated = $req->fetch();
+
     return $updated;
 }
 
-public function createPost($title, $content) {
+    //Fonction pour créer un post
+    public function createPost($title, $content) {
     $db = $this->dbConnect();
     $req = $db->prepare('INSERT INTO posts(title, content, creation_date, update_date) VALUES (?, ?, NOW(), NOW())');
-    $newPost = $req->execute(array($title, $content));
+    $req->execute(array($title, $content));
+    $newPost = $req->fetch();
 
     return $newPost;
 }
 
-public function deletePost($postId) {
+    //Fonction pour sup un post
+    public function deletePost($postId) {
     $db = $this->dbConnect();
     $req = $db->prepare('DELETE FROM posts WHERE id = ?');
-    $deletedPost = $req->execute(array($postId));
+    $req->execute(array($postId));
+    $deletedPost = $req->fetch();
 
     return $deletedPost;
 }
