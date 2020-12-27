@@ -27,6 +27,10 @@
         <h2>Commentaires</h2>
 
         <?php
+
+        if (isset($_GET['report']) && $_GET['report'] == 'success') {
+            echo '<p id="success">Le commentaire a bien été signalé.</p>';
+        }
         while ($comment = $comments->fetch())
         {
         ?>
@@ -36,9 +40,18 @@
         }
 		?>
 		
-		<?php 
-	if (!empty($_SESSION)) {
-?>
+        <?php 
+        if (!empty($_SESSION)) {
+            if (!in_array($comment['id'], $idComment) && $comment['author'] !== $_SESSION['pseudo']) {
+                echo '<p class="report"><a href="index.php?action=report&amp;id=' . $comment['id_post'] . '&amp;comment-id=' . $comment['id'] . '"><i class="fas fa-exclamation-triangle"></i>Signaler</a></p>';
+            }
+        }
+        ?>
+			<p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>
+        
+        <?php
+	    if (!empty($_SESSION)) {
+        ?>
 		<div id="commentForm">
 			<p>N'hésitez pas à me laisser un commentaire !</p>
 			<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">

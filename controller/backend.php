@@ -4,6 +4,7 @@
 use \blog\model\CommentManager;
 use \blog\model\MemberManager;
 use \blog\model\PostManager;
+use \blog\model\ReportManager;
 
 require_once '/wamp64/www/blog/model/Manager.php';
 
@@ -22,10 +23,13 @@ function loginAdmin() {
 function displayAdmin() {
 	$postManager = new PostManager(); 
 	$memberManager = new MemberManager();
+	$reportManager = new ReportManager();
 	
 	$posts = $postManager->getPosts();
  
 	$members = $memberManager->getMembers();
+
+	$reports = $reportManager->getReports();
 
 	require('view/backend/adminView.php');
 }

@@ -23,7 +23,7 @@ Créer un blog avec :
     
     - Affichage de tous les articles
 
-    - Cliquer sur lire la suite pour aller un article précis
+    - Cliquer sur lire la suite pour aller vers un article précis
 
     - Afficher les commentaires associés à l'article
 
@@ -33,3 +33,11 @@ Créer un blog avec :
 
     - Affichage de ce commentaire
 //////////////////////////////////////////////////////////////
+
+    2 eme commit =>
+
+    - Mise en Place de TinyMCE dans interface Admin
+    - Reports des commentaires
+    - Mise en forme page d'accueil
+
+/////////////////////////////////////////////////////////////

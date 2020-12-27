@@ -13,7 +13,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-			<a class="navbar-brand" href="#">Jean Forteroche, le blog !</a>
+			<a class="navbar-brand" href="index.php?action=listPosts">Jean Forteroche, le blog !</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
 				aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -22,11 +22,7 @@
 			<div class="collapse navbar-collapse" id="navbarColor01">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="#">Accueil</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="#">About</a>
+						<a class="nav-link" href="index.php?action=listPosts">Accueil</a>
 					</li>
 					<?php
 							if (!empty($_SESSION)) {

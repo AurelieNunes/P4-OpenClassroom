@@ -1,6 +1,7 @@
 <?php
 namespace blog\model;
-require_once '/wamp64/www/blog/model/Manager.php';
+
+use \blog\model\Manager;
 
 class CommentManager extends Manager
 {

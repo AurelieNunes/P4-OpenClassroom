@@ -6,6 +6,7 @@ require '/wamp64/www/blog/controller/backend.php';
 require '/wamp64/www/blog/model/PostManager.php';
 require '/wamp64/www/blog/model/CommentManager.php';
 require '/wamp64/www/blog/model/MemberManager.php';
+require '/wamp64/www/blog/model/ReportManager.php';
 
 try {
 	if (isset($_GET['action'])) {
@@ -56,6 +57,9 @@ try {
 		}
 		elseif ($_GET['action'] == 'loginSubmit') {
 			loginSubmit(strip_tags($_POST['pseudo']), strip_tags($_POST['pass']));
+		}
+		elseif ($_GET['action'] == 'report') {
+			postReport($_GET['id'], $_GET['comment-id'], $_SESSION['id']);
 		}	
 		elseif ($_GET['action'] == 'admin-login-view') {
 			if (isset($_SESSION)) {
@@ -103,6 +107,9 @@ try {
 		}
 		elseif ($_GET['action'] == 'deleteComment') {
 			removeComment($_GET['id']);
+		}
+		elseif ($_GET['action'] == 'deleteMember') {
+			removeMember($_GET['id']);
 		}
 	}
 	else {

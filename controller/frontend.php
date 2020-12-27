@@ -4,6 +4,7 @@
 use \blog\model\PostManager;
 use \blog\model\CommentManager;
 use \blog\model\MemberManager;
+use \blog\model\ReportManager;
 
 
 require_once '/wamp64/www/blog/model/Manager.php';
@@ -23,12 +24,17 @@ function post()
 {
     $postManager = new PostManager();
 	$commentManager = new CommentManager();
+	$reportManager = new ReportManager();
 
 	$post = $postManager->getPost($_GET['id']);
 
     if ($post) {
 		$comments = $commentManager->getComments($_GET['id']);
-		$comments;
+		
+		if(!empty($_SESSION))
+		{
+			$idComment = $reportManager->getIdReports($_SESSION['id']);
+		}
 
     } else {
     	header('Location: index.php');
@@ -49,6 +55,14 @@ function addComment($postId, $author, $comment)
     else {
         header('Location: index.php?action=post&id=' . $postId . '#commentsFrame');
     }
+}
+
+function postReport($postId, $commentId, $memberId) {
+	$reportManager = new ReportManager();
+
+	$reported = $reportManager->postReports($commentId, $memberId);
+
+	header('Location: index.php?action=post&id=' . $postId . '&report=success#commentsFrame');
 }
 
 function displaySubscribe() {
