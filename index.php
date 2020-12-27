@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-require '/wamp64/www/blog/controller/frontend.php';
-require '/wamp64/www/blog/controller/backend.php';
-require '/wamp64/www/blog/model/PostManager.php';
-require '/wamp64/www/blog/model/CommentManager.php';
-require '/wamp64/www/blog/model/MemberManager.php';
-require '/wamp64/www/blog/model/ReportManager.php';
+require './controller/frontend.php';
+require './controller/backend.php';
+require './model/PostManager.php';
+require './model/CommentManager.php';
+require './model/MemberManager.php';
+require './model/ReportManager.php';
 
 try {
 	if (isset($_GET['action'])) {

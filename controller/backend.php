@@ -6,7 +6,7 @@ use \blog\model\MemberManager;
 use \blog\model\PostManager;
 use \blog\model\ReportManager;
 
-require_once '/wamp64/www/blog/model/Manager.php';
+require_once './model/Manager.php';
 
 function displayLoginAdmin() {
 	require('view/frontend/adminLoginView.php');

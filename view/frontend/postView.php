@@ -43,7 +43,7 @@
         <?php 
         if (!empty($_SESSION)) {
             if (!in_array($comment['id'], $idComment) && $comment['author'] !== $_SESSION['pseudo']) {
-                echo '<p class="report"><a href="index.php?action=report&amp;id=' . $comment['id_post'] . '&amp;comment-id=' . $comment['id'] . '"><i class="fas fa-exclamation-triangle"></i>Signaler</a></p>';
+                echo '<p class="report"><a href="index.php?action=report&amp;id=' . $comment['id_post'] . '&amp;comment-id=' . $comment['id'] . '">Signaler</a></p>';
             }
         }
         ?>

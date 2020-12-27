@@ -7,7 +7,7 @@ use \blog\model\MemberManager;
 use \blog\model\ReportManager;
 
 
-require_once '/wamp64/www/blog/model/Manager.php';
+require_once './model/Manager.php';
 
 //Fonction liste des posts
 function listPosts()
