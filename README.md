@@ -41,3 +41,11 @@ Créer un blog avec :
     - Mise en forme page d'accueil
 
 /////////////////////////////////////////////////////////////
+
+    3 eme commit =>
+
+    - Ajout Administration dans menu
+    - Logout
+    - Affichage de déconnexion
+
+////////////////////////////////////////////////////////////

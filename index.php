@@ -58,6 +58,9 @@ try {
 		elseif ($_GET['action'] == 'loginSubmit') {
 			loginSubmit(strip_tags($_POST['pseudo']), strip_tags($_POST['pass']));
 		}
+		elseif ($_GET['action'] == 'logout') {
+			logout();
+		}
 		elseif ($_GET['action'] == 'report') {
 			postReport($_GET['id'], $_GET['comment-id'], $_SESSION['id']);
 		}	
