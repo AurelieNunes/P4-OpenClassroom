@@ -28,7 +28,7 @@ class ReportManager extends Manager
 
     public function getReports() {
       $db = $this->dbConnect();
-      $reports = $db->query('SELECT COUNT(*) AS nb_reports, comment_id, author, comment, DATE_FORMAT(comment_date, "%d/%m/%Y %H:%i:%s") AS date_c FROM reports INNER JOIN comments ON reports.comment_id = comments.id HAVING nb_reports >= 2 ORDER BY nb_reports DESC');
+      $reports = $db->query('SELECT * FROM comments WHERE reported >1');
 
       return $reports;
     }
