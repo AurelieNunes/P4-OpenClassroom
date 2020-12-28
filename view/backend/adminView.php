@@ -72,23 +72,21 @@
 		echo '<p id="success">Le commentaire a bien été supprimé !</p>';
 	}
 
-	$countReport = 0;
+	
 	while ($report = $reports->fetch()) {
 ?>
 		<div class="listPanel">
 			<p><a class="linkAdmin" href="#"><?= $report['author']; ?></a></p>
-			<p><em><?= $report['date_c']; ?></em></p>
+			<p><?= $report['comment']; ?></p>
 			<button class="report removeComment"><i class="fas fa-trash-alt"></i></button>
-			<div id="reportModal<?= $countReport ?>" class="modal">
+			<div id="reportModal" class="modal">
 				<div class="modalContent">
 					<p>Voulez-vous vraiment supprimer le commentaire de <em><?= $report['author']; ?></em> ?</p>
 					<a class="confirmDelete"
-						href="index.php?action=deleteComment&amp;id=<?= $report['comment_id']; ?>">Oui</a>
-					<span id="closeCommentModal<?= $countReport++ ?>" class="closeModal">Non</span>
+						href="index.php?action=deleteComment&amp;id=<?= $report['id']; ?>">Oui</a>
+					<span id="closeCommentModal" class="closeModal">Non</span>
 				</div>
 			</div>
-			<p class="nbReports"><?= $report['nb_reports']; ?> signalements</p>
-			<p><?= $report['comment']; ?></p>
 		</div>
 
 		<?php

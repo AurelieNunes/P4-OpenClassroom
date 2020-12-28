@@ -37,7 +37,7 @@ class MemberManager extends Manager
     public function createMember($pseudo, $pass, $mail)
     {
         $db = $this->dbConnect();
-        $newMember = $db->prepare('INSERT INTO members(pseudo, pass, email, subscribe_date, isAdmin) VALUES (2, ?, ?, ?, CURDATE(),0)');
+        $newMember = $db->prepare('INSERT INTO members(pseudo, pass, email, subscribe_date, isAdmin) VALUES (?, ?, ?, CURDATE(),0)');
         $newMember->execute(array($pseudo, $pass, $mail));
 
         return $newMember;

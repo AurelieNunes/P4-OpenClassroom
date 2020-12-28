@@ -36,16 +36,16 @@
         ?>
             <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
             <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-        <?php
-        }
-		?>
 		
         <?php 
+
         if (!empty($_SESSION)) {
-            if (!in_array($comment['id'], $idComment) && $comment['author'] !== $_SESSION['pseudo']) {
-                echo '<p class="report"><a href="index.php?action=report&amp;id=' . $comment['id_post'] . '&amp;comment-id=' . $comment['id'] . '">Signaler</a></p>';
+            if ($comment['author'] !== $_SESSION['pseudo']) {
+                echo '<p class="report"><a href="index.php?action=report&amp;id=' . $comment['post_id'] . '&amp;comment-id=' . $comment['id'] . '">Signaler</a></p>';
             }
+            
         }
+    }
         ?>
 			<p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>
         

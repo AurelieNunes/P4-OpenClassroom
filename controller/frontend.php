@@ -30,11 +30,7 @@ function post()
 
     if ($post) {
 		$comments = $commentManager->getComments($_GET['id']);
-		
-		if(!empty($_SESSION))
-		{
-			$idComment = $reportManager->getIdReports($_SESSION['id']);
-		}
+		$idComment = $_GET['id'];
 
     } else {
     	header('Location: index.php');
