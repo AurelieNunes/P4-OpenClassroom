@@ -14,7 +14,7 @@ function listPosts()
 {
 	$postManager = new PostManager(); // Création d'un objet
 
-    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+	$posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
 
     require('view/frontend/homeView.php');
 }

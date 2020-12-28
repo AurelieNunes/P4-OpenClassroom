@@ -17,11 +17,13 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
 	echo '<p id="success">Vous êtes bien deconnecté.</p>';
 }
 
+if (!$posts->fetch()) 
+{
+	echo "Aucuns posts à affichés";
+} else {
 
 while ($data = $posts->fetch()) {
-	if (!empty($data)) {
-?>
-
+	?>
 	<div class="card row text-white justify-content-center bg-primary mb-3" style="max-width: 20rem;">
 		<div class="card-header">le <?= $data['creation_date_fr']; ?></div>
 		<div class="card-body">
@@ -43,16 +45,13 @@ while ($data = $posts->fetch()) {
 			</p>
 		</div>
 	</div>
-
-	<div class="postNull">
 		<?php
-			} else {
-				echo "Ce billet n'existe pas.";
-			}
 		}
+	}
+		 ?>
+	<?php
 		$posts->closeCursor();
 	?>
-	</div>
 
 </section>
 
