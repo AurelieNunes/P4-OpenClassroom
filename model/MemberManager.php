@@ -9,7 +9,7 @@ class MemberManager extends Manager
     public function loginMember($pseudo)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, groups_id, pass FROM members WHERE pseudo = ?');
+        $req = $db->prepare('SELECT id, pass, isAdmin FROM members WHERE pseudo = ?');
         $req->execute(array($pseudo));
         $member = $req->fetch();
 
@@ -37,7 +37,7 @@ class MemberManager extends Manager
     public function createMember($pseudo, $pass, $mail)
     {
         $db = $this->dbConnect();
-        $newMember = $db->prepare('INSERT INTO members(groups_id, pseudo, pass, email, subscribe_date) VALUES (2, ?, ?, ?, CURDATE())');
+        $newMember = $db->prepare('INSERT INTO members(pseudo, pass, email, subscribe_date, isAdmin) VALUES (2, ?, ?, ?, CURDATE(),0)');
         $newMember->execute(array($pseudo, $pass, $mail));
 
         return $newMember;
@@ -45,7 +45,7 @@ class MemberManager extends Manager
 
     public function getMembers() {
         $db = $this->dbConnect();
-        $members = $db->query('SELECT id, groups_id, pseudo, DATE_FORMAT(subscribe_date, "%d/%m/%Y") AS date_sub FROM members ORDER BY id');
+        $members = $db->query('SELECT id, pseudo, DATE_FORMAT(subscribe_date, "%d/%m/%Y") AS date_sub FROM members ORDER BY id');
 
         return $members;
     }

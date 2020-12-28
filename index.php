@@ -73,7 +73,7 @@ try {
 			loginAdmin();
 		}
 		elseif ($_GET['action'] == 'admin') {
-			if (isset($_SESSION) && $_SESSION['groups_id'] == '1') {
+			if (isset($_SESSION) && $_SESSION['isAdmin'] == '1') {
 				displayAdmin();
 			} else {
 				throw new Exception('Administrateur non identifié');
@@ -81,7 +81,7 @@ try {
 		}
 		elseif ($_GET['action'] == 'updatePost') {
 			if (isset($_GET['id']) && $_GET['id'] > 0) {
-				if (isset($_SESSION) && $_SESSION['groups_id'] == '1') {
+				if (isset($_SESSION) && $_SESSION['isAdmin'] == '1') {
 					 displayUpdate();
 				}  
 	        } else {
@@ -92,7 +92,7 @@ try {
 			submitUpdate($_POST['title'], $_POST['content'], $_GET['id']);
 		}
 		elseif ($_GET['action'] == 'createPost') {
-			if (isset($_SESSION) && $_SESSION['groups_id'] == '1') {
+			if (isset($_SESSION) && $_SESSION['isAdmin'] == '1') {
 				displayCreatePost();
 			} else {
 				throw new Exception('Administrateur non identifié');

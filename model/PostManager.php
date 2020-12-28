@@ -28,7 +28,7 @@ class PostManager extends Manager
     //Fonction pour mettre à jour un post
     public function updatePost($title, $content, $postId) {
     $db = $this->dbConnect();
-    $req = $db->prepare('UPDATE posts SET title = ?, content = ?, update_date = NOW() WHERE id = ?');
+    $req = $db->prepare('UPDATE posts SET title = ?, content = ?, update_date_fr = NOW() WHERE id = ?');
     $req->execute(array($title, $content, $postId));
     $updated = $req->fetch();
 
@@ -38,7 +38,7 @@ class PostManager extends Manager
     //Fonction pour créer un post
     public function createPost($title, $content) {
     $db = $this->dbConnect();
-    $req = $db->prepare('INSERT INTO posts(title, content, creation_date, update_date) VALUES (?, ?, NOW(), NOW())');
+    $req = $db->prepare('INSERT INTO posts(title, content, creation_date, update_date_fr) VALUES (?, ?, NOW(), NOW())');
     $req->execute(array($title, $content));
     $newPost = $req->fetch();
 

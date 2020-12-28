@@ -26,10 +26,10 @@
 					</li>
 					<?php
 							if (!empty($_SESSION)) {
-	                            echo '<li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user"></i> ' . htmlspecialchars($_SESSION['pseudo']) . '</a></li>';
+	                            echo '<li class="nav-item"><a class="nav-link" href="#"> ' . htmlspecialchars($_SESSION['pseudo']) . '</a></li>';
 	                        }
-	                      	if(!empty($_SESSION) && $_SESSION['groups_id'] == '1') {
-	                            echo '<li class="nav-item"><a class="nav-link" href="index.php?action=admin-login-view"> Administration</a></li>';
+	                      	if(!empty($_SESSION) && $_SESSION['isAdmin'] == '1') {
+	                            echo '<li class="nav-item"><a class="nav-link" href="index.php?action=admin"> Administration</a></li>';
 	                        }
 	                        if (!empty($_SESSION))  {
 	                            echo '<li class="nav-item"><a class="nav-link" href="index.php?action=logout">Déconnexion</a></li>';
@@ -37,9 +37,9 @@
 	                            echo '<li class="nav-item"><a class="nav-link" href="index.php?action=login">Connexion / Inscription</a></li>';
 	                        }
 							?>
-					<li class ="nav-item">
+					<!-- <li class ="nav-item">
 							<a class="nav-link" href="index.php?action=adminLogin">Administration</a>
-					</li>
+					</li> -->
 					<li class="nav-item">
 						<a class="nav-link " href="index.php?action=about">À propos</a>
 					</li>

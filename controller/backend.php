@@ -8,11 +8,13 @@ use \blog\model\ReportManager;
 
 require_once './model/Manager.php';
 
-function displayLoginAdmin() {
+function displayLoginAdmin() 
+{
 	require('view/frontend/adminLoginView.php');
 }
 
-function loginAdmin() {
+function loginAdmin() 
+{
 	if (isset($_POST['pass']) AND $_POST['pass'] == "TEST") {
 		header('Location: index.php?action=admin');
 	} else {
@@ -20,7 +22,8 @@ function loginAdmin() {
 	}
 }
 
-function displayAdmin() {
+function displayAdmin() 
+{
 	$postManager = new PostManager(); 
 	$memberManager = new MemberManager();
 	$reportManager = new ReportManager();
@@ -34,14 +37,16 @@ function displayAdmin() {
 	require('view/backend/adminView.php');
 }
 
-function displayUpdate() {
+function displayUpdate() 
+{
 	$postManager = new PostManager();
 
 	$post = $postManager->getPost($_GET['id']);
 	require('view/backend/updatePostView.php');
 }
 
-function submitUpdate($title, $content, $postId) {
+function submitUpdate($title, $content, $postId) 
+{
 	$postManager = new PostManager();
 	
 	$updated = $postManager->updatePost($title, $content, $postId);
@@ -49,7 +54,8 @@ function submitUpdate($title, $content, $postId) {
 	Header('Location: index.php?action=admin&update-status=success');
 }
 
-function displayCreatePost() {
+function displayCreatePost() 
+{
 	require('view/backend/createPostView.php');
 }
 
@@ -61,7 +67,8 @@ function newPost($title, $content) {
 	Header('Location: index.php?action=admin&new-post=success');
 }
 
-function removePost($postId) {
+function removePost($postId) 
+{
 	$postManager = new PostManager();
 
 	$deletedPost = $postManager->deletePost($postId);
@@ -69,7 +76,8 @@ function removePost($postId) {
 	Header('Location: index.php?action=admin&remove-post=success');
 }
 
-function removeComment($commentId) {
+function removeComment($commentId) 
+{
 	$commentManager = new CommentManager();
 
 	$deletedComment = $commentManager->deleteComment($commentId);
@@ -77,7 +85,8 @@ function removeComment($commentId) {
 	Header('Location: index.php?action=admin&remove-comment=success');
 }
 
-function removeMember($memberId) {
+function removeMember($memberId) 
+{
 	$memberManager = new MemberManager();
 
 	$deletedMember = $memberManager->deleteMember($memberId);

@@ -96,7 +96,7 @@ function addMember($pseudo, $pass, $email) {
 			
 			// redirige vers page d'accueil avec le nouveau paramètre
 			header('Location: index.php?account-status=account-successfully-created');
-		}	
+		} 
     //}
     // else 
     // {
@@ -121,8 +121,8 @@ function loginSubmit($pseudo, $pass) {
     else {
     	if ($isPasswordCorrect) {
     		$_SESSION['id'] = $member['id'];
-    		$_SESSION['pseudo'] = ucfirst(strtolower($pseudo));
-    		$_SESSION['groups_id'] = $member['groups_id'];
+			$_SESSION['pseudo'] = ucfirst(strtolower($pseudo));
+			$_SESSION['isAdmin'] = $member['isAdmin'];
     		header('Location: index.php');
     	}
         else {
