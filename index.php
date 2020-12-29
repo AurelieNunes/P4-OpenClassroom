@@ -63,7 +63,10 @@ try {
 		}
 		elseif ($_GET['action'] == 'report') {
 			postReport($_GET['id'], $_GET['comment-id'], $_SESSION['id']);
-		}	
+		}
+		elseif ($_GET['action'] == 'about') {
+			displayAbout();
+		} 	
 		elseif ($_GET['action'] == 'admin-login-view') {
 			if (isset($_SESSION)) {
 				displayLoginAdmin();
