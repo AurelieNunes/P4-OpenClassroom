@@ -4,7 +4,7 @@ $title = "Billet simple pour l'Alaska"; ?>
 
 <?php ob_start(); ?>
 
-<section class="listPosts d-flex justify-content-between">
+<section class="listPosts w-100 d-flex flex-wrap justify-content-around">
 
 	<?php
 
@@ -25,22 +25,21 @@ $title = "Billet simple pour l'Alaska"; ?>
 	} else {
 		for ($i = 0; $i < count($data); $i++) {
 	?>
-			<div class="card row text-white justify-content-center bg-primary mb-3" style="max-width: 20rem;">
+			<div class="card row text-white justify-content-center bg-primary mb-3" style="max-width:45%;">
 				<div class="card-header">le <?= $data[$i]['creation_date_fr']; ?></div>
 				<div class="card-body">
 					<h4 class="card-title"><?= htmlspecialchars($data[$i]['title']); ?></h4>
 					<p class="card-text">
 						<?php
-						$extract = substr($data[$i]['content'], 0, 1000);
+						$extract = substr($data[$i]['content'], 0, 200);
 						echo $extract . " ...";
 						?>
 						<div class="link-ReadMore">
 							<a class="text-white nav-link" href="index.php?action=post&amp;id=<?= $data[$i]['id']; ?>">Lire la suite ...</a>
 						</div>
-						<svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
-							<rect width="100%" height="100%" fill="#868e96"></rect>
-							<text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-						</svg>
+						<p class="img-post">
+							<img src="<?= $data[$i]['url']; ?>" alt="<?= $data[$i]['alt']; ?>">
+						</p>
 					</p>
 				</div>
 			</div>
