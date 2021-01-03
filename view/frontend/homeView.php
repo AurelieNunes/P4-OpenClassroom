@@ -3,19 +3,24 @@
 $title = "Billet simple pour l'Alaska"; ?>
 
 <?php ob_start(); ?>
+<?php
 
-<section class="listPosts w-100 d-flex flex-wrap justify-content-around">
+// si compte bien créé, affiche message de confirmation à l'utilisateur
+if (isset($_GET['account-status']) && $_GET['account-status'] == 'account-successfully-created') {
+	echo '<div class="alert alert-dismissible alert-success text-center" id="success">
+	<p><strong>Votre compte a bien été créé.</strong></p>
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	</div>';
+}
 
-	<?php
+if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
+	echo '<p class="alert alert-dismissible alert-warning text-center" id="success">Vous êtes bien deconnecté.</p>';
+}
+?>
 
-	// si compte bien créé, affiche message de confirmation à l'utilisateur
-	if (isset($_GET['account-status']) && $_GET['account-status'] == 'account-successfully-created') {
-		echo '<p id="success">Votre compte a bien été créé. <a href="index.php?action=login">Se connecter</a></p>';
-	}
+<section class="listPosts">
 
-	if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
-		echo '<p id="success">Vous êtes bien deconnecté.</p>';
-	}
+<?php
 
 	$data = $posts->fetchAll();
 	$posts->closeCursor();
@@ -25,7 +30,7 @@ $title = "Billet simple pour l'Alaska"; ?>
 	} else {
 		for ($i = 0; $i < count($data); $i++) {
 	?>
-			<div class="card row text-white justify-content-center bg-primary mb-3" style="max-width:45%;">
+			<div class="card row text-white bg-primary mb-3">
 				<div class="card-header">le <?= $data[$i]['creation_date_fr']; ?></div>
 				<div class="card-body">
 					<h4 class="card-title"><?= htmlspecialchars($data[$i]['title']); ?></h4>
@@ -37,15 +42,12 @@ $title = "Billet simple pour l'Alaska"; ?>
 						<div class="link-ReadMore">
 							<a class="text-white nav-link" href="index.php?action=post&amp;id=<?= $data[$i]['id']; ?>">Lire la suite ...</a>
 						</div>
-						<p class="img-post">
-							<img src="<?= $data[$i]['url']; ?>" alt="<?= $data[$i]['alt']; ?>">
-						</p>
 					</p>
 				</div>
 			</div>
 	<?php
 		}
-	}
+	} 
 	?>
 </section>
 

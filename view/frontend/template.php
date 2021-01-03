@@ -1,3 +1,7 @@
+<?php
+//setcookie('pseudo', time() + 365*24*3600, null, null, false, true);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,40 +15,41 @@
 </head>
 
 <header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-		<a class="navbar-brand" href="index.php?action=listPosts">Jean Forteroche, le blog !</a>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand " href="index.php?action=listPosts"><h6>Jean Forteroche, le blog !</h6></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
 			aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarColor01">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
+				<li class="nav-item active ml-auto p-2">
 					<a class="nav-link" href="index.php?action=listPosts">Accueil</a>
 				</li>
 				<?php
 							
 	                      	if(!empty($_SESSION) && $_SESSION['isAdmin'] == '1') {
-	                            echo '<li class="nav-item"><a class="nav-link" href="index.php?action=admin"> Administration</a></li>';
+	                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link" href="index.php?action=admin"> Administration</a></li>';
 	                        }
 	                        if (!empty($_SESSION))  {
-	                            echo '<li class="nav-item"><a class="nav-link" href="index.php?action=logout">Déconnexion</a></li>';
+	                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link" href="index.php?action=logout">Déconnexion</a></li>';
 	                        } else {
-	                            echo '<li class="nav-item"><a class="nav-link" href="index.php?action=login">Connexion / Inscription</a></li>';
+	                            echo '<li class="nav-item ml-auto p-2"><a class="nav-link" href="index.php?action=login">Connexion / Inscription</a></li>';
 							}
-							?>
-				<?php
+							
 							if (!empty($_SESSION)) {
-	                            echo '<li class="nav-item d-flex"><p class ="m-auto pr-2 text-white text-uppercase">Bienvenue<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['pseudo']) . '</li>';
+	                            echo '<li class="nav-item d-flex ml-auto p-2"><p class ="m-auto pr-2 text-white text-uppercase">Bienvenue<p class="m-auto text-white">'  . htmlspecialchars($_SESSION['pseudo']) . '</li>';
 	                        }
-							?>			
+							?>
 			</ul>
 		</div>
 	</nav>
 
 	<div class="jumbotron pt-8">
 		<h1 class="display-3">Billet Simple Pour l'Alaska !</h1>
-		<p class="lead text-white">Tout quitter pour se retrouver, être en communion avec la nature et apprendre à vivre avec... Découverte, danger, rencontre, une riche histoire à retrouver ici au fur et à mesure de mon écriture</p>
+		<p class="lead text-white">Tout quitter pour se retrouver, être en communion avec la nature et apprendre à vivre
+			avec... </br>
+			Découverte, danger, rencontre, une riche histoire à retrouver ici au fur et à mesure de son écriture</p>
 	</div>
 </header>
 
@@ -65,20 +70,64 @@
 	</script>
 </body>
 <footer>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<ul class="navbar-nav mr-auto">
-	<li class="nav-item active">
-					<a class="nav-link" href="index.php?action=about"><h5>Qui suis-je</h5></a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="index.php?action=listPosts"><h5>Me contacter</h5></a>
-				</li>
-			</ul>
+<div>
+  <ul class="pagination pagination-sm justify-content-end">
+    <li class="page-item disabled">
+      <a class="page-link" href="#">&laquo;</a>
+    </li>
+    <li class="page-item active">
+      <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">4</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">5</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">&raquo;</a>
+    </li>
+  </ul>
+</div>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+		<ul class="navbar-nav mr-auto w-100 flex-column text-center">
+			<li class="nav-item active">
+				<a class="nav-link" href="index.php?action=about">
+					<h5>Qui suis-je</h5>
+				</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
+					<h5>Me contacter</h5>
+				</a>
+			</li>
+			<li class="fictif small font-weight-light text-white p-2">
+				Ce blog est fictif ! Projet réalisé pour Openclassrooms par Aurélie Nunes</li>
+		</ul>
 	</nav>
+	<!-- <div class="cookies">
+		<p>
+			 <?php //if(isset ($_COOKIE['pseudo'])) {
+				//echo "<p>Hé ! Je me souviens de toi !<br />";
+			//} else {
+			//	echo "<p>Merci d'accepter les cookies en cliquant sur ok</p> <button>OK</button>";
+			//} ?>
+		</p>
+	</div> -->
+
 	<blockquote class="blockquote text-center">
-		<p class="mb-0">Le confort nous éloigne de la personne que nous sommes. Il faut savoir prendre du recul pour mieux se retrouver</p>
-		<div class="blockquote-footer">Aurelie <cite title="Source Title">Mon Cerveau</cite></div>
+		<p class="mb-0 font-italic font-weight-light">Le confort nous éloigne de la personne que nous sommes. Il faut savoir prendre du recul pour
+			mieux se retrouver</p>
+		<div class="blockquote-footer">Aurelie <cite title="Source Title">My Brain</cite></div>
 	</blockquote>
+
+
 </footer>
 
 </html>

@@ -8,6 +8,7 @@ require './model/CommentManager.php';
 require './model/MemberManager.php';
 require './model/ReportManager.php';
 
+
 try {
 	if (isset($_GET['action'])) {
 	    if ($_GET['action'] == 'listPosts') {

@@ -6,7 +6,7 @@
 	<h3>Se connecter au panneau d'administration</h3>
 <?php
 if (isset($_GET['account-status']) &&  $_GET['account-status'] == 'unsuccess-login') {
-	echo '<p id="error">Mauvais mot de passe !<p>';
+	echo '<p id="error class="text-center">Mauvais mot de passe !<p>';
 }
 ?>
 	<div class="form-group">

@@ -1,7 +1,15 @@
+*, ::after, ::before {
+  box-sizing:content-box!important;
+}
+
+html {
+  box-sizing: content-box!important;
+  height: 100%;
+}
+
 .jumbotron {
   background : url('images/img-accueil-re.jpg');  
   background-size: cover;
-  height: 400px;
 }
 
 .img-post {
@@ -15,6 +23,109 @@
   height: auto;
 }
 
-footer {
+.display-3 {
+  font-size: 20px;
+}
+
+.lead {
+  font-size: 12px;
+}
+
+.listPosts .card {
+  margin: auto;
+}
+
+footer h5 {
+    font-size:16px;
+    margin-bottom: 0;
+}
+
+footer .navbar {
+  padding: 0;
+}
+
+.fictif, .blockquote {
+  font-size: 14px;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  width: unset;
+  padding: unset;
+}
+
+/**LoginView  SubscribeView PostView**/
+#loginFrame .form-group, #subscribeFrame .form-group, #commentForm form{
+  width: 50%;
+}
+
+#success, #error {
+  padding: 0;
+}
+
+#about {
+  text-align: justify;
+  padding: 10px;
+}
+
+/* ---------------------------------------- */
+/* ==               MEDIAS                  */
+/*                  QUERIES                 */
+/*---------------------------------------- */
+
+/* ---------------------------------------- */
+/* ==              MEDIA 1                 */
+/*---------------------------------------- */
+
+@media screen and (min-width: 425px){
+  header h6 {
     font-size: 20px;
+  }
+
+  .display-3 {
+    font-size: 26px;
+  }
+  
+  .lead {
+    font-size: 16px;
+  }
+}
+
+
+/* ---------------------------------------- */
+/* ==              MEDIA 2                 */
+/*---------------------------------------- */
+@media screen and (min-width: 575px){
+  header h6 {
+    font-size: 30px;
+  }
+
+  .display-3 {
+    font-size: 40px;
+  }
+  
+  .lead {
+    font-size: 20px;
+  }
+}
+
+/* ---------------------------------------- */
+/* ==              MEDIA 3                 */
+/*---------------------------------------- */
+@media screen and (min-width: 1024px){
+
+  .display-3 {
+    font-size: 45px;
+  }
+
+  .listPosts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .listPosts .card {
+    width: 45%;
+    margin-top: 0;
+  }
+
 }
