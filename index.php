@@ -3,6 +3,7 @@ session_start();
 
 require './controller/frontend.php';
 require './controller/backend.php';
+require './model/Pagination.php';
 require './model/PostManager.php';
 require './model/CommentManager.php';
 require './model/MemberManager.php';

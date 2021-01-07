@@ -3,6 +3,7 @@
 // namespaces utilisés
 use \blog\model\CommentManager;
 use \blog\model\MemberManager;
+use \blog\model\Pagination;
 use \blog\model\PostManager;
 use \blog\model\ReportManager;
 
@@ -25,14 +26,28 @@ function loginAdmin()
 function displayAdmin() 
 {
 	$postManager = new PostManager(); 
+	$pagination = new Pagination ();
 	$memberManager = new MemberManager();
 	$reportManager = new ReportManager();
 	
-	$posts = $postManager->getPosts();
- 
-	$members = $memberManager->getMembers();
+	$postsPerPage = 4;
 
-	$reports = $reportManager->getReports();
+	$nbPosts = $pagination->getTotalPosts();
+	$nbPage = $pagination->getNbPages($nbPosts, $postsPerPage);
+
+	if (!isset($_GET['page'])) {
+		$cPage = 0;
+	} else {
+		if (isset($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $nbPage) {
+			$cPage = (intval($_GET['page']) - 1) * $postsPerPage;
+		}
+	}
+	
+    $posts = $postManager->getPosts($cPage, $postsPerPage);
+ 
+    $reports = $reportManager->getReports();
+    $members = $memberManager->getMembers();
+
 
 	require('view/backend/adminView.php');
 }

@@ -38,31 +38,27 @@
 				<p><a class="linkAdmin"
 						href="index.php?action=updatePost&amp;id=<?= $post['id']; ?>"><?= $post['title']; ?></a></p>
 				<p><?= $post['creation_date_fr']; ?></p>
-				<div id="postModal<?= $countPost ?>" class="modal">
+				<div id="postModal<?= $countPost++ ?>" class="modal">
 			</li>
 		</ul>
 		<div class="modalContent mb-4">
-			<p class="mb-0">Voulez-vous vraiment supprimer l'article <em><?= $post['title']; ?></em> ?</p>
-			<a class="confirmDelete" href="index.php?action=deletePost&amp;id=<?= $post['id']; ?>">Oui</a>
-			<span id="closePostModal<?= $countPost++ ?>" class="closeModal">Non</span>
+		<a class="confirmDelete" href="index.php?action=deletePost&amp;id=<?= $post['id']; ?>">Supprimer l'article <em><?= $post['title']; ?></a>
+			
 		</div>
-		<a class="report" href="index.php?action=updatePost&amp;id=<?= $post['id']; ?>"></a>
+		<a class="report" href="index.php?action=updatePost&amp;id=<?= $post['id']; ?>"></a><p><em><?= $data['date_fr']; ?></em></p>
 
 
 
-
-	<!-- //if ($post['creation_date_fr'] < $post['update_date_fr']) {
-		//echo '<p><em>modifié le ' . $post['update_date_fr'] . '</em></p>';
-	}
-// -->
-			<?php
-				} else {
-					echo "<p>Pas d'articles !</p>";
+		<?php if ($post['date_fr'] < $post['update_date_fr']) {
+				echo '<p><em>modifié le ' . $post['update_date_fr'] . '</em></p>';
+			} ?>
+				<?php
+						} else {
+							echo "<p>Pas d'articles !</p>";
+								}
 						}
-				}
-
-			?>
-	</div>
+					?>
+			</div>
 
 
 	<div class="headPost mb-4" id="commentManage">

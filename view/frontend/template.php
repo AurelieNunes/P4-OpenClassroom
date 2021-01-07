@@ -16,7 +16,9 @@
 
 <header>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-		<a class="navbar-brand " href="index.php?action=listPosts"><h6>Jean Forteroche, le blog !</h6></a>
+		<a class="navbar-brand " href="index.php?action=listPosts">
+			<h6>Jean Forteroche, le blog !</h6>
+		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
 			aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -54,7 +56,7 @@
 </header>
 
 <body>
-	<div class="container">
+	<div class="container h-75" >
 		<?= $content ?>
 	</div>
 
@@ -70,33 +72,9 @@
 	</script>
 </body>
 <footer>
-<div>
-  <ul class="pagination pagination-sm justify-content-end">
-    <li class="page-item disabled">
-      <a class="page-link" href="#">&laquo;</a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">2</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">3</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">4</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">5</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">&raquo;</a>
-    </li>
-  </ul>
-</div>
+
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
-		<ul class="navbar-nav mr-auto w-100 flex-column text-center">
+		<ul class="navbar-nav mr-auto w-100">
 			<li class="nav-item active">
 				<a class="nav-link" href="index.php?action=about">
 					<h5>Qui suis-je</h5>
@@ -113,16 +91,17 @@
 	</nav>
 	<!-- <div class="cookies">
 		<p>
-			 <?php //if(isset ($_COOKIE['pseudo'])) {
+			  //if(isset ($_COOKIE['pseudo'])) {
 				//echo "<p>Hé ! Je me souviens de toi !<br />";
 			//} else {
 			//	echo "<p>Merci d'accepter les cookies en cliquant sur ok</p> <button>OK</button>";
-			//} ?>
+			//} 
 		</p>
 	</div> -->
 
 	<blockquote class="blockquote text-center">
-		<p class="mb-0 font-italic font-weight-light">Le confort nous éloigne de la personne que nous sommes. Il faut savoir prendre du recul pour
+		<p class="mb-0 font-italic font-weight-light">Le confort nous éloigne de la personne que nous sommes. Il faut
+			savoir prendre du recul pour
 			mieux se retrouver</p>
 		<div class="blockquote-footer">Aurelie <cite title="Source Title">My Brain</cite></div>
 	</blockquote>

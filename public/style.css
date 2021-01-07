@@ -5,6 +5,14 @@
 html {
   box-sizing: content-box!important;
   height: 100%;
+} 
+
+body {
+  height: 100%;
+}
+
+#container {
+  height: 507px;
 }
 
 .jumbotron {
@@ -44,6 +52,12 @@ footer .navbar {
   padding: 0;
 }
 
+footer .navbar-nav {
+  flex-direction: column;
+  text-align: center;
+
+}
+
 .fictif, .blockquote {
   font-size: 14px;
 }
@@ -66,6 +80,17 @@ footer .navbar {
   text-align: justify;
   padding: 10px;
 }
+
+.mypicture {
+  width: 20%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.mypicture img {
+  width: 100%;
+}
+
 
 /* ---------------------------------------- */
 /* ==               MEDIAS                  */
@@ -126,6 +151,16 @@ footer .navbar {
   .listPosts .card {
     width: 45%;
     margin-top: 0;
+  }
+
+  footer .navbar-nav {
+    flex-direction: row;
+    justify-content: space-around;
+
+  }
+
+  .blockquote {
+    font-size: 20px;
   }
 
 }

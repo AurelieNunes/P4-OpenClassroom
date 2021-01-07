@@ -17,12 +17,26 @@
         </p>
 
         <div class="card border-primary mb-4 mx-auto" style="max-width: 40rem;">
-            <div class="card-header">le <?= $post['creation_date_fr'] ?>
+            <div class="card-header">le <?= $post['date_fr']?>
+            <?php 
+	if ($post['date_fr'] < $post['update_date_fr']) {
+        echo '<p id="updateDate">modifié le ' . $post['update_date_fr'] . '</p>';
+        var_dump ($post['date_fr']);
+        var_dump ($post['update_date_fr']);
+	}
+
+           
+
+        ?>	
             </div>
             <div class="card-body">
                 <h4 class="card-title"><?= htmlspecialchars($post['title']) ?></h4>
                 <p class="card-text"><?= nl2br(htmlspecialchars($post['content'])) ?></p>
+                <div class="h-25">
+                    <img src="<?= htmlspecialchars($posts['url']) ?>" alt="<?= htmlspecialchars($posts['alt']) ?>">
+                </div>
             </div>
+
         </div>
 
         <h2 class="text-center">Commentaires</h2>
@@ -40,6 +54,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title"><?= htmlspecialchars($comment['author']) ?></strong> le
                         <?= $comment['comment_date_fr'] ?></h5>
+
                 </div>
                 <div class="modal-body">
                     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>

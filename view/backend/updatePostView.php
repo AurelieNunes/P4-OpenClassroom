@@ -7,6 +7,7 @@ $title = "Panneau d'administration"; ?>
 <section id="adminPanel">
 	<h1>Panneau d'administration</h1>
 	<div id="managerBlock">
+
 		<p class="returnLink"><a href="index.php?action=admin">Retour au menu</a></p>
 		<div id="updateBlock">
 			<form action="index.php?action=submitUpdate&amp;id=<?= $post['id']; ?>" method="post">

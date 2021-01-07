@@ -3,8 +3,8 @@
 $title = "Billet simple pour l'Alaska"; ?>
 
 <?php ob_start(); ?>
-<?php
 
+<?php
 // si compte bien créé, affiche message de confirmation à l'utilisateur
 if (isset($_GET['account-status']) && $_GET['account-status'] == 'account-successfully-created') {
 	echo '<div class="alert alert-dismissible alert-success text-center" id="success">
@@ -18,12 +18,11 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
 }
 ?>
 
-<section class="listPosts">
+<section class="listPosts h-100">
 
 <?php
 
 	$data = $posts->fetchAll();
-	$posts->closeCursor();
 
 	if (!$data) {
 		echo "Aucuns posts à afficher";
@@ -31,7 +30,7 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
 		for ($i = 0; $i < count($data); $i++) {
 	?>
 			<div class="card row text-white bg-primary mb-3">
-				<div class="card-header">le <?= $data[$i]['creation_date_fr']; ?></div>
+				<div class="card-header">le <?= $data[$i]['date_fr']; ?></div>
 				<div class="card-body">
 					<h4 class="card-title"><?= htmlspecialchars($data[$i]['title']); ?></h4>
 					<p class="card-text">
@@ -47,9 +46,27 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
 			</div>
 	<?php
 		}
-	} 
-	?>
-</section>
+	} ?>
+	</section>
+
+	<?php
+	if ($nbPage >= 2) {
+		?>
+		<section id="Pagination" class="text-right ">
+			<div id="pageFrame">
+		<?php
+				for ($i = 1; $i <= $nbPage; $i++) {
+					if ((!isset($_GET['page']) && $i == 1) || (isset($_GET['page']) && $_GET['page'] == $i)) {
+						echo "<span class='cPageFrame'>$i</span>";
+					} else {
+						echo "<a class='pageBlock' href=\"index.php?page=$i\">$i</a>";
+					}
+				}
+			}
+		?>
+			</div>
+		
+		</section>
 
 <?php $content = ob_get_clean(); ?>
 

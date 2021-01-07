@@ -2,10 +2,10 @@
 
 // Chargement des classes
 use \blog\model\PostManager;
+use \blog\model\Pagination;
 use \blog\model\CommentManager;
 use \blog\model\MemberManager;
 use \blog\model\ReportManager;
-
 
 require_once './model/Manager.php';
 
@@ -13,8 +13,22 @@ require_once './model/Manager.php';
 function listPosts()
 {
 	$postManager = new PostManager(); // Création d'un objet
+	$pagination = new Pagination();
+	//determine le nb de posts par page
+	$postsPerPage = 4;
 
-	$posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+	$nbPosts = $pagination->getTotalPosts();
+	$nbPage = $pagination->getNbPages($nbPosts, $postsPerPage);
+
+	if (!isset($_GET['page'])) {
+		$cPage = 0;
+	} else {
+		if (isset($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $nbPage) {
+			$cPage = (intval($_GET['page']) - 1) * $postsPerPage;
+		}
+	}
+
+	$posts = $postManager->getPosts($cPage,$postsPerPage); // Appel d'une fonction de cet objet
 
     require('view/frontend/homeView.php');
 }
