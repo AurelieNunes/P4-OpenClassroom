@@ -47,8 +47,8 @@
 		</div>
 	</nav>
 
-	<div class="jumbotron pt-8">
-		<h1 class="display-3">Billet Simple Pour l'Alaska !</h1>
+	<div class="jumbotron pt-8 part-front">
+		<h1>Billet Simple Pour l'Alaska !</h1>
 		<p class="lead text-white">Tout quitter pour se retrouver, être en communion avec la nature et apprendre à vivre
 			avec... </br>
 			Découverte, danger, rencontre, une riche histoire à retrouver ici au fur et à mesure de son écriture</p>
@@ -56,7 +56,7 @@
 </header>
 
 <body>
-	<div class="container h-75" >
+	<div class="container" >
 		<?= $content ?>
 	</div>
 
@@ -73,7 +73,7 @@
 </body>
 <footer>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex mb-2">
 		<ul class="navbar-nav mr-auto w-100">
 			<li class="nav-item active">
 				<a class="nav-link" href="index.php?action=about">

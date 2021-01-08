@@ -20,14 +20,14 @@ if (isset($_GET['error']) && $_GET['error'] == 'google-recaptcha') {
 	<div class="form-group mx-auto">
 		<form action="index.php?action=addMember" method="post">
 			<label for="pseudo">Pseudo</label><br />
-			<input type="text" name="pseudo" id="pseudo" required /><br />
+			<input class="mb-2" type="text" name="pseudo" id="pseudo" required /><br />
 			<label for="pass">Mot de passe</label><br />
-			<input type="password" name="pass" id="pass" required /><br />
+			<input class="mb-2" type="password" name="pass" id="pass" required /><br />
 			<label for="pass_confirm">Retapez votre mot de passe</label><br />
-			<input type="password" name="pass_confirm" id="pass_confirm" required /><br />
+			<input class="mb-2" type="password" name="pass_confirm" id="pass_confirm" required /><br />
 			<label for="mail">Adresse email</label><br />
-			<input type="email" name="mail" id="mail" required /><br />
-			<input type="submit" value="S'inscrire" />
+			<input class="mb-2" type="email" name="mail" id="mail" required /><br />
+			<input class="mb-2" type="submit" value="S'inscrire" />
             <!-- <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
 			<div class="g-recaptcha" data-sitekey="6LedxgAaAAAAAOAprewvpCwnCMdxhqKK3NEQT82h"></div> -->
 		</form>

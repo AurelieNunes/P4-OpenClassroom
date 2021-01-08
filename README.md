@@ -70,3 +70,13 @@ Créer un blog avec :
     - Responsive
 
 ///////////////////////////////////////////////////////////////////
+
+    7 eme commit =>
+
+    - Ajout Pagination
+    - Correctif sur la date de mise à jour
+    - Ajout intégration img
+    - Changement dans la pagination
+    - CSS
+
+//////////////////////////////////////////////////////////////////

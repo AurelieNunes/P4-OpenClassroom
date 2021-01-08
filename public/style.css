@@ -1,81 +1,73 @@
-*, ::after, ::before {
-  box-sizing:content-box!important;
-}
+/* GLOBAL */
 
 html {
-  box-sizing: content-box!important;
-  height: 100%;
-} 
-
-body {
-  height: 100%;
-}
-
-#container {
-  height: 507px;
-}
-
-.jumbotron {
-  background : url('images/img-accueil-re.jpg');  
-  background-size: cover;
-}
-
-.img-post {
-  width: 110px;
-  height:70px;
-  margin: auto;
-}
-
-.img-post img {
   width: 100%;
-  height: auto;
 }
 
-.display-3 {
-  font-size: 20px;
-}
-
-.lead {
-  font-size: 12px;
-}
-
-.listPosts .card {
-  margin: auto;
-}
-
-footer h5 {
-    font-size:16px;
-    margin-bottom: 0;
-}
-
-footer .navbar {
-  padding: 0;
-}
-
-footer .navbar-nav {
-  flex-direction: column;
-  text-align: center;
-
-}
-
-.fictif, .blockquote {
-  font-size: 14px;
-}
-
+/* CONTAINERS */
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
   width: unset;
   padding: unset;
 }
 
-/**LoginView  SubscribeView PostView**/
+/**LOGINVIEW, SUBSCRIBEVIEW, POSTVIEW**/
 #loginFrame .form-group, #subscribeFrame .form-group, #commentForm form{
   width: 50%;
 }
 
+/* LOGINVIEW, SUBSCRIBEVIEW */
 #success, #error {
   padding: 0;
 }
 
+/* TEMPLATES */
+/* Footer */
+footer h5 {
+  font-size:16px;
+  margin-bottom: 0;
+}
+
+footer .navbar {
+padding: 0;
+}
+
+footer .navbar-nav {
+flex-direction: column;
+text-align: center;
+}
+
+/* TEMPLATE FRONTEND */
+.part-front {
+  background : url('images/img-accueil-re.jpg');  
+  background-size: cover;
+}
+
+/* Citation */
+.lead {
+  font-size: 12px;
+}
+
+.blockquote {
+  font-size: 14px;
+}
+
+/* ADMINVIEW */
+/* PART MEMBERMANAGER */
+#memberManage table tr td .btn {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+/* HOMEVIEW */
+.listPosts .card {
+  margin: auto;
+}
+
+.pagination {
+  justify-content: flex-end;
+}
+
+/* ABOUTMEVIEW */
 #about {
   text-align: justify;
   padding: 10px;
@@ -106,9 +98,9 @@ footer .navbar-nav {
     font-size: 20px;
   }
 
-  .display-3 {
+  /* .display-3 {
     font-size: 26px;
-  }
+  } */
   
   .lead {
     font-size: 16px;
@@ -124,9 +116,9 @@ footer .navbar-nav {
     font-size: 30px;
   }
 
-  .display-3 {
+  /* .display-3 {
     font-size: 40px;
-  }
+  } */
   
   .lead {
     font-size: 20px;
@@ -138,9 +130,9 @@ footer .navbar-nav {
 /*---------------------------------------- */
 @media screen and (min-width: 1024px){
 
-  .display-3 {
+  /* .display-3 {
     font-size: 45px;
-  }
+  } */
 
   .listPosts {
     display: flex;

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container">
+
         <p class="text-center">
             <a href="index.php">Retour à la liste des billets</a>
         </p>
@@ -19,24 +19,18 @@
         <div class="card border-primary mb-4 mx-auto" style="max-width: 40rem;">
             <div class="card-header">le <?= $post['date_fr']?>
             <?php 
-	if ($post['date_fr'] < $post['update_date_fr']) {
-        echo '<p id="updateDate">modifié le ' . $post['update_date_fr'] . '</p>';
-        var_dump ($post['date_fr']);
-        var_dump ($post['update_date_fr']);
-	}
-
-           
-
-        ?>	
+	            if ($post['date_fr'] < $post['update_date_fr']) {
+                echo '<p id="updateDate">modifié le ' . $post['update_date_fr'] . '</p>';
+	            }
+            ?>	
             </div>
             <div class="card-body">
                 <h4 class="card-title"><?= htmlspecialchars($post['title']) ?></h4>
                 <p class="card-text"><?= nl2br(htmlspecialchars($post['content'])) ?></p>
-                <div class="h-25">
-                    <img src="<?= htmlspecialchars($posts['url']) ?>" alt="<?= htmlspecialchars($posts['alt']) ?>">
-                </div>
+                <div class="img-posts w-50 mx-auto">
+					<img class="img-posts h-auto w-100" src="<?= $post['lien'];?>" alt="<?= $post['alt']; ?>"></img>
+				</div>
             </div>
-
         </div>
 
         <h2 class="text-center">Commentaires</h2>
@@ -86,14 +80,14 @@
         </div>
         <?php
 	} else {
-		echo '<div id="info">Pour me laisser un commentaire, veuillez vous <a href="index.php?action=login">connecter</a></div>';
+		echo '<div id="info" class="text-center text-uppercase mb-5"><em>Pour me laisser un commentaire, veuillez vous<em> <a href="index.php?action=login">connecter</a></div>';
 	}
 ?>
 
-        </section>
-        <?php $content = ob_get_clean(); ?>
+</section>
+<?php $content = ob_get_clean(); ?>
 
-        <?php require('template.php'); ?>
+<?php require('template.php'); ?>
 </body>
 
 </html>

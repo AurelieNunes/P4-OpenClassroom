@@ -41,6 +41,9 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
 						<div class="link-ReadMore">
 							<a class="text-white nav-link" href="index.php?action=post&amp;id=<?= $data[$i]['id']; ?>">Lire la suite ...</a>
 						</div>
+						<div class="img-posts w-50 mx-auto">
+							<img class="img-posts h-auto w-100" src="<?= $data[$i]['lien'];?>" alt="<?= $data[$i]['alt']; ?>"></img>
+						</div>
 					</p>
 				</div>
 			</div>
@@ -52,21 +55,27 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
 	<?php
 	if ($nbPage >= 2) {
 		?>
-		<section id="Pagination" class="text-right ">
-			<div id="pageFrame">
+		<div class="pagination text-right">
+  			<ul class="pagination pagination-sm">
+			  
 		<?php
 				for ($i = 1; $i <= $nbPage; $i++) {
 					if ((!isset($_GET['page']) && $i == 1) || (isset($_GET['page']) && $_GET['page'] == $i)) {
-						echo "<span class='cPageFrame'>$i</span>";
-					} else {
-						echo "<a class='pageBlock' href=\"index.php?page=$i\">$i</a>";
-					}
+						?>
+						<li class="page-item disabled">
+						<?php
+						echo "<span class='cPageFrame page-link'>$i</span>"; ?>
+					  	</li>				
+				<?php	} else {
+					?>
+					<li class="page-item active"> <?php
+						echo "<a class='pageBlock page-link' href=\"index.php?page=$i\">$i</a>";?>
+					</li>
+				<?php	}
 				}
 			}
 		?>
-			</div>
-		
-		</section>
+		</div>
 
 <?php $content = ob_get_clean(); ?>
 

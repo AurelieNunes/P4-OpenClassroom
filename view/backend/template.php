@@ -6,7 +6,8 @@
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css" />
-	<title><?= $title ?></title>	
+	<title><?= $title ?></title>
+	<link rel="stylesheet" href="public/style.css" />
 </head>
 
 <header>
@@ -58,39 +59,10 @@
 	</script>
 </body>
 
-<footer>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex w-100">
-		<ul class="navbar-nav mr-auto w-100">
-			<li class="nav-item active">
-				<a class="nav-link" href="index.php?action=about">
-					<h5>Qui suis-je</h5>
-				</a>
-			</li>
-			<li class="nav-item active">
-				<a class="nav-link" href="mailto:aurelie.nunes.dev@gmail.com?subject=PremierContact&body=Bonjour,">
-					<h5>Me contacter</h5>
-				</a>
-			</li>
-			<li class="fictif small font-weight-light text-white p-2">
-				Ce blog est fictif ! Projet réalisé pour Openclassrooms par Aurélie Nunes</li>
-		</ul>
-	</nav>
-	<!-- <div class="cookies">
-		<p>
-			 <?php //if(isset ($_COOKIE['pseudo'])) {
-				//echo "<p>Hé ! Je me souviens de toi !<br />";
-			//} else {
-			//	echo "<p>Merci d'accepter les cookies en cliquant sur ok</p> <button>OK</button>";
-			//} ?>
+<footer class="w-100">
+		<p class="fictif small font-weight-light text-white bg-dark text-center mb-0">
+			Ce blog est fictif ! Projet réalisé pour Openclassrooms par Aurélie Nunes
 		</p>
-	</div> -->
-
-	<blockquote class="blockquote text-center">
-		<p class="mb-0 font-italic font-weight-light">Le confort nous éloigne de la personne que nous sommes. Il faut
-			savoir prendre du recul pour
-			mieux se retrouver</p>
-		<div class="blockquote-footer">Aurelie <cite title="Source Title">My Brain</cite></div>
-	</blockquote>
-
 </footer>
+
 </html>

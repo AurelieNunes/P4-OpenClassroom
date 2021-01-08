@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 
-<section id="loginFrame" class="h-50">
+<section id="loginFrame" class="h-75 mx-auto">
 
 <?php
 if (isset($_GET['account-status']) &&  $_GET['account-status'] == 'unsuccess-login') {
@@ -15,10 +15,10 @@ if (isset($_GET['account-status']) &&  $_GET['account-status'] == 'unsuccess-log
 	<div class="form-group mx-auto">
 		<form action="index.php?action=loginSubmit" method="post">
 			<label for="pseudo">Pseudo</label><br/>
-			<input type="text" name="pseudo" id="pseudo" required /></br>
+			<input class="mb-2" type="text" name="pseudo" id="pseudo" required /></br>
 			<label for="pass">Mot de passe</label><br />
-			<input type="password" name="pass" id="pass" required /></br>
-			<input type="submit" value="Se connecter" />
+			<input class="mb-2" type="password" name="pass" id="pass" required /></br>
+			<input class="mb-2" type="submit" value="Se connecter" />
 		</form>
 		<a href="index.php?action=subscribe">Pas encore inscrit? C'est ici</a>
 	</div>

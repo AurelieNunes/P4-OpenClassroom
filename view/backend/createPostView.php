@@ -11,9 +11,9 @@ $title = "Nouvel article"; ?>
 			<div id="updateBlock">
 				<form action="index.php?action=submitPost" method="post">
 					<label for="title">Titre : </label>
-					<input type="text" name="title" id="title" placeholder="Votre titre" size="80" /><br/>
-					<textarea name="content" rows="40" cols="160"></textarea>
-					<input type="submit" value="Poster" />
+					<input type="text" name="title" id="title" placeholder="Votre titre" size="30" /><br/>
+					<textarea name="content" rows="40" cols="40"></textarea>
+					<input class="mb-5" type="submit" value="Poster" />
 				</form>
 			</div>
 		</div>
