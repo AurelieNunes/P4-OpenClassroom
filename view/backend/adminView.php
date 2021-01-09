@@ -42,7 +42,7 @@
 					<div id="postModal<?= $countPost++ ?>" class="modal">
 				</li>
 			</ul>
-		<div class="modalContent">
+		<div id="Modal" class="modalContent">
 			<a class="confirmDelete" href="index.php?action=deletePost&amp;id=<?= $post['id']; ?>">Supprimer l'article <em><?= $post['title']; ?></a>	
 		</div>
 			<a class="report" href="index.php?action=updatePost&amp;id=<?= $post['id']; ?>"></a><p class="mb-8"><em><?= $post['date_fr']; ?></em></p>
@@ -102,11 +102,11 @@
           							<span aria-hidden="true">&times;</span>
         						</button>
       					</div>
-      					<div class="modal-body">
+      					<div id="Modal" class="modal-body">
         					<p>Voulez-vous vraiment supprimer le commentaire de <em><?= $report['author']; ?></p>
       					</div>
       					<div class="modal-footer">
-        					<button type="button" class="btn btn-primary">
+        					<button id="btnModal" type="button" class="btn btn-primary">
 								<a class="confirmDelete" href="index.php?action=deleteComment&amp;id=<?= $report['id']; ?>">Oui</a></button>
         					<button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
       					</div>
@@ -148,12 +148,12 @@
 				<td><em><?= $member['date_sub']; ?></em></td>
 				<td><button type="button" class="btn btn-warning px-1">OUI</button>
 				
-					<div id="memberModal<?= $countMember ?>" class="modal">
+					<div id="Modal<?= $countMember ?>" class="modal">
 						<div class="modalContent">
 							<p>Voulez-vous vraiment supprimer le membre <em><?= $member['pseudo']; ?></em> ?</p>
-							<a class="confirmDelete"
-								href="index.php?action=deleteMember&amp;id=<?= $member['id']; ?>"><button>Oui</a></button>
-							<span id="closeMemberModal<?= $countMember++ ?>" class="closeModal">Non</span>
+							<button id="btnModal"><a class="confirmDelete"
+								href="index.php?action=deleteMember&amp;id=<?= $member['id']; ?>">Oui</a></button>
+							<span id="closeModal<?= $countMember++ ?>" class="closeModal">Non</span>
 						</div>
 					</div>
 				</td>
