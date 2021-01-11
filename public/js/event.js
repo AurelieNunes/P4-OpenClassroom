@@ -1,15 +1,21 @@
-const modal = document.getElementById('modal');
-const buttonModal = document.getElementById('btnModal');
-const closeBtn = document.getElementById('closeBtn');
-console.log(modal)
+/* Ouverture et fermeture des modals */
 
-buttonModal.addEventListener("click", ()=>{
-    console.log('ok')
-    modal.style.display="block";
-})
+const modals = document.getElementsByClassName('modal');
+const buttonModal = document.getElementsByClassName('btnModal');
+console.log(buttonModal)
+const closeBtn = document.getElementsByClassName('closeBtn');
+console.log(modals)
 
-closeBtn.addEventListener("click", ()=> {
-    modal.style.display="none";
-})
+for (let i = 0; i < buttonModal.length; i++){
+    let modal = modals + i.toString();
+    let close = closeBtn + i.toString();
+    
+    buttonModal[i].addEventListener("click", ()=>{
+        console.log('ok')
+        modals[i].style.display="block"
+    })
 
-
+    closeBtn[i].addEventListener("click", ()=> {
+        modals[i].style.display="none";
+    })
+}

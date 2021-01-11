@@ -4,11 +4,6 @@ html {
   width: 100%;
 }
 
-/** MODAL */
-#modal {
-  display: none;
-}
-
 /**LOGINVIEW, SUBSCRIBEVIEW, POSTVIEW**/
 #loginFrame .form-group, #subscribeFrame .form-group, #commentForm form{
   width: 50%;
@@ -17,6 +12,11 @@ html {
 
 #success, #error {
   padding: 0;
+}
+
+/* HOMEVIEW */
+.pagination {
+  justify-content: flex-end;
 }
 
 /* TEMPLATES */
@@ -51,24 +51,12 @@ text-align: center;
 }
 
 /* ADMINVIEW */
-/* PART MEMBERMANAGER */
-#memberManage table tr td .btn {
-  padding-left: 3px;
-  padding-right: 3px;
-}
-
-/* HOMEVIEW */
-.listPosts .card {
-  margin: auto;
-}
-
-#adminPanel 
-
-.pagination {
-  justify-content: flex-end;
-}
-
 /* CREATE POST */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  width: unset;
+  padding:0;
+  margin:0;
+}
 
 #createPost {
   width: 100%;
@@ -79,11 +67,15 @@ text-align: center;
   width: min-content;
   margin: auto;
 }
+/* PART MEMBERMANAGER */
+#memberManage table tr td .btn {
+  padding-left: 3px;
+  padding-right: 3px;
+}
 
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
-  width: unset;
-  padding:0;
-  margin:0;
+/* COMMENT MANAGE */
+#commentManage .card{
+  margin: auto;
 }
 
 /* ABOUTMEVIEW */

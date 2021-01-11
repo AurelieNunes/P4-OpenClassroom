@@ -13,8 +13,7 @@ $title = "Panel d'administration"; ?>
 	<!--Ecrire Article -->
 	<div class="headPost mb-4 text-center">
 		<h3>Ecrire un article</h3>
-		<button class="btn btn-primary" id="writePost"><a class=" text-white" href="index.php?action=createPost">Ecrire
-				un article</a></button>
+			<button class="btn btn-primary" id="writePost"><a class=" text-white" href="index.php?action=createPost">Ecrire un article</a></button>
 	</div>
 
 	<!-- Gestion des Artciles -->
@@ -37,46 +36,43 @@ $title = "Panel d'administration"; ?>
 					if (!empty($post)) {
 			?>
 
-		<ul class="list-group">
-			<li class="list-group-item d-flex justify-content-between align-items-center">
+			<ul class="list-group">
+				<li class="list-group-item d-flex justify-content-between align-items-center">
 
-				<p><a class="linkAdmin"
-						href="index.php?action=updatePost&amp;id=<?= $post['id']; ?>"><?= $post['title']; ?></a></p>
-				<p><?= $post['date_fr']; ?></p>
-				<div <?= $countPost++ ?>></div>
-			</li>
-		</ul>
+					<p><a class="linkAdmin"
+							href="index.php?action=updatePost&amp;id=<?= $post['id']; ?>"><?= $post['title']; ?></a></p>
+					<p><?= $post['date_fr']; ?></p>
+					<div <?= $countPost++ ?>></div>
+				</li>
+			</ul>
 
 		<div class="modalContent">
-			<button id="btnModal">Supprimer l'article
+			<button class="btnModal btn btn-secondary">Supprimer l'article
 				<em><?= $post['title']; ?></button>
 		</div>
 
-		<div id="modal">
+		<div class="modal">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title">Supprimer</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
 					</div>
 					<div class="modal-body">
 						<p>Voulez-vous vraiment supprimer
 							l'article <em><?= $post['title']; ?></p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary"> <a
+						<button type="button" class="btn btn-primary"> <a class="text-white"
 								href="index.php?action=deletePost&amp;id=<?= $post['id']; ?>">Oui</a></button>
-						<button type="button" id="closeBtn" class="btn btn-secondary" data-dismiss="close">Non</button>
+						<button type="button" class="btn btn-secondary closeBtn" data-dismiss="close">Non</button>
 					</div>
 				</div>
 			</div>
 		</div>
 
 
-
-		<a class="updatePost" href="index.php?action=updatePost&amp;id=<?= $post['id']; ?>"></a>
+	<section id="updatepost">
+		<a class="update" href="index.php?action=updatePost&amp;id=<?= $post['id']; ?>"></a>
 		<p class="mb-0"><em><?= $post['date_fr']; ?></em></p>
 
 		<?php if ($post['date_fr'] < $post['update_date_fr']) {
@@ -89,7 +85,8 @@ $title = "Panel d'administration"; ?>
 						}
 						$posts->closeCursor();
 ?>
-	</div> <?php
+	</section> 
+	<?php
 	// Pagination
 	if ($nbPage >= 2) {
 ?>
@@ -112,7 +109,7 @@ $title = "Panel d'administration"; ?>
 	</section>
 
 	<!-- Commentaires signalés -->
-	<div class="headPost mb-4" id="commentManage">
+	<section class="headPost mb-4" id="commentManage">
 		<h3 class="text-center">Gestion des commentaires signalés</h3>
 		<?php 
 	if (isset($_GET['remove-comment']) &&  $_GET['remove-comment'] == 'success') {
@@ -123,27 +120,29 @@ $title = "Panel d'administration"; ?>
 	while ($report = $reports->fetch()) {
 ?>
 		<div class="report">
-			<p><a class="linkAdmin" href="#"><?= $report['author']; ?></a></p>
-			<p><?= $report['comment']; ?></p>
-			<button type="button" class="btn btn-primary report removeComment" id="btnModal">Supprimer</button>
-			<div id="modal">
+
+			<div class="card border-primary mb-3">
+				<div class="card-header"><?= $report['author']; ?></a></div>
+				<div class="card-body">
+					<h6 class="card-title text-black"><?= $report['comment']; ?></h6>
+					<button type="button" class="btnModal btn btn-primary report removeComment ">Supprimer</button>
+				</div>
+			</div>
+
+			<div class="modal">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title">Supprimer</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
 						</div>
 						<div class="modal-body">
 							<p>Voulez-vous vraiment supprimer le commentaire de <em><?= $report['author']; ?></p>
 						</div>
 						<div class="modal-footer">
 							<button id="btn" type="button" class="btn btn-primary">
-								<a class="confirmDelete"
+								<a class="confirmDelete text-white"
 									href="index.php?action=deleteComment&amp;id=<?= $report['id']; ?>">Oui</a></button>
-							<button type="button" id="closeBtn" class="btn btn-secondary"
-								data-dismiss="modal">Non</button>
+							<button type="button" class="btn btn-secondary closeBtn" data-dismiss="modal">Non</button>
 						</div>
 					</div>
 				</div>
@@ -152,10 +151,10 @@ $title = "Panel d'administration"; ?>
 	}
 	$reports->closeCursor();
 ?>
-		</div>
+	</section>
 
 		<!-- Gestion des Membres -->
-		<div class="headPost mb-4" id="memberManage">
+		<section class="headPost mb-4" id="memberManage">
 			<h3 class="text-center">Gestion des membres</h3>
 
 			<?php 
@@ -182,26 +181,23 @@ $title = "Panel d'administration"; ?>
 					<td><?= $member['id']; ?></td>
 					<td><?= $member['pseudo']; ?></td>
 					<td><em><?= $member['date_sub']; ?></em></td>
-					<td><button type="button" class="btn btn-warning px-1" id="btnModal">OUI</button>
+					<td><button type="button" class="btnModal btn btn-danger px-1">OUI</button>
 					</td>
 				</tr>
 
-				<div id="modal">
+				<div class="modal">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title">Supprimer</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
 							</div>
 							<div class="modal-body">
 								<p>Voulez-vous vraiment supprimer le membre <em><?= $member['pseudo']; ?></p>
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-primary"> <a
+								<button type="button" class="btn btn-primary"> <a class="text-white"
 										href="index.php?action=deleteMember&amp;id=<?= $member['id']; ?>">Oui</a></button>
-								<button type="button" id="closeBtn" class="btn btn-secondary"
+								<button type="button" class="btn btn-secondary closeBtn"
 									data-dismiss="close">Non</button>
 							</div>
 						</div>
@@ -219,10 +215,11 @@ $title = "Panel d'administration"; ?>
 			<?php
 	$members->closeCursor();
 ?>
-		</div>
+		</section>
 </section>
 
 
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
+<script src="public/js/event.js"></script>

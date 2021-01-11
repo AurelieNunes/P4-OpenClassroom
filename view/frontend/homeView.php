@@ -51,30 +51,6 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
 		}
 	} ?>
 	</section>
-	<div class="cookies" id="Modal">
-  		<div class="modal-dialog" role="document">
-    		<div class="modal-content">
-      			<div class="modal-header">
-        			<h5 class="modal-title">Cookies</h5>
-        			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          				<span aria-hidden="true">&times;</span>
-        			</button>
-     			</div>
-      			<div class="modal-body">
-        			<p><?php if(isset ($_COOKIE['pseudo'])) {
-						echo "<p>Hé ! Je me souviens de toi !<br />";
-					} else {
-						echo "<p>Merci d'accepter les cookies en cliquant sur ok</p>";
-					}
-					?></p>
-      			</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">Ok</button>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				</div>
-    		</div>
-  		</div>
-	</div>
 
 	<?php
 	if ($nbPage >= 2) {
@@ -104,3 +80,4 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
+
