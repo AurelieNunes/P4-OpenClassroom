@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<section id="subscribeFrame" class="h-50">
+<section id="subscribeFrame" class="h-50 mb-5">
 <?php 
 if (isset($_GET['error']) && $_GET['error'] == 'invalidUsername') {
 	echo '<p id="error" class="alert alert-dismissible alert-danger text-center mx-auto">Pseudo déjà utilisé</p>';

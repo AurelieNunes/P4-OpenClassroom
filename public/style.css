@@ -4,17 +4,17 @@ html {
   width: 100%;
 }
 
-/* CONTAINERS */
-/* .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
-  width: unset;
-} */
+/** MODAL */
+#modal {
+  display: none;
+}
 
 /**LOGINVIEW, SUBSCRIBEVIEW, POSTVIEW**/
 #loginFrame .form-group, #subscribeFrame .form-group, #commentForm form{
   width: 50%;
+  margin: auto;
 }
 
-/* LOGINVIEW, SUBSCRIBEVIEW */
 #success, #error {
   padding: 0;
 }
@@ -51,8 +51,6 @@ text-align: center;
 }
 
 /* ADMINVIEW */
-
-
 /* PART MEMBERMANAGER */
 #memberManage table tr td .btn {
   padding-left: 3px;
@@ -63,6 +61,8 @@ text-align: center;
 .listPosts .card {
   margin: auto;
 }
+
+#adminPanel 
 
 .pagination {
   justify-content: flex-end;
@@ -165,6 +165,10 @@ text-align: center;
 
   #updateBlock form textarea {
     width: 100%;
+  }
+/* LOGINVIEW, SUBSCRIBEVIEW, POSTVIEW */
+  #loginFrame .form-group, #subscribeFrame .form-group, #commentForm form {
+    width: 25%;
   }
   }
 

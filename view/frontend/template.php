@@ -1,5 +1,5 @@
 <?php
-//setcookie('pseudo', time() + 365*24*3600, null, null, false, true);
+setcookie('pseudo', time() + 365*24*3600, null, null, true, true);
 ?>
 
 <!DOCTYPE html>
@@ -10,8 +10,25 @@
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title><?= $title ?></title>
+	<meta name="description"
+        content="Jean Forteroche, le blog ! Ici vous trouverez mon histoire au fur et à mesure de mes aventures">
+
+    <meta name="author" content="NUNES Aurélie" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+
+    <!--Open Graph data -->
+    <meta property="og:title" content="Jean Forteroche, le blog !" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+	<meta property="og:description" content="Ici vous trouverez mon histoire au fur et à mesure de mes aventures" />
+	
+	<!--Bootstrap -->
 	<link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css" />
+	<!-- Feuille CSS -->
 	<link rel="stylesheet" href="public/style.css" />
+
 </head>
 
 <header>
@@ -89,15 +106,8 @@
 				Ce blog est fictif ! Projet réalisé pour Openclassrooms par Aurélie Nunes</li>
 		</ul>
 	</nav>
-	<!-- <div class="cookies">
-		<p>
-			  //if(isset ($_COOKIE['pseudo'])) {
-				//echo "<p>Hé ! Je me souviens de toi !<br />";
-			//} else {
-			//	echo "<p>Merci d'accepter les cookies en cliquant sur ok</p> <button>OK</button>";
-			//} 
-		</p>
-	</div> -->
+
+	
 
 	<blockquote class="blockquote text-center">
 		<p class="mb-0 font-italic font-weight-light">Le confort nous éloigne de la personne que nous sommes. Il faut

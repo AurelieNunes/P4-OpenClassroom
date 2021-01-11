@@ -1,4 +1,4 @@
-<php $title = "Qui suis-je ?";?>
+<?php $title = "Qui suis-je ?";?>
 
 <?php ob_start();?>
 

@@ -38,7 +38,7 @@
         <?php
 
         if (isset($_GET['report']) && $_GET['report'] == 'success') {
-            echo '<p id="success">Le commentaire a bien été signalé.</p>';
+            echo '<p class="alert alert-dismissible alert-primary text-center" id="success">Le commentaire a bien été signalé.</p>';
         }
         while ($comment = $comments->fetch())
         {

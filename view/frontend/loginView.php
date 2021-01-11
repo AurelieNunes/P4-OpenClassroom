@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 
-<section id="loginFrame" class="h-75 mx-auto">
+<section id="loginFrame" class="h-75 mx-auto mb-5">
 
 <?php
 if (isset($_GET['account-status']) &&  $_GET['account-status'] == 'unsuccess-login') {

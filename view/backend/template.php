@@ -7,6 +7,23 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css" />
 	<title><?= $title ?></title>
+	<meta name="description"
+        content="Jean Forteroche, le blog ! Ici vous trouverez mon histoire au fur et à mesure de mes aventures">
+
+    <meta name="author" content="NUNES Aurélie" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+
+    <!--Open Graph data -->
+    <meta property="og:title" content="Jean Forteroche, le blog !" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+	<meta property="og:description" content="Ici vous trouverez mon histoire au fur et à mesure de mes aventures" />
+	
+	<!--Bootstrap -->
+	<link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css" />
+	<!-- Feuille CSS -->
 	<link rel="stylesheet" href="public/style.css" />
 </head>
 
@@ -57,6 +74,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 	</script>
+	<script src="public/js/event.js"></script>
 </body>
 
 <footer class="w-100">
