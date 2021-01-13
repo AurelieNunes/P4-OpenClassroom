@@ -20,7 +20,7 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
 
 <section class="listPosts h-100">
 
-<?php
+	<?php
 
 	$data = $posts->fetchAll();
 
@@ -29,55 +29,56 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
 	} else {
 		for ($i = 0; $i < count($data); $i++) {
 	?>
-			<div class="card row text-white bg-primary mb-3">
-				<div class="card-header">le <?= $data[$i]['date_fr']; ?></div>
-				<div class="card-body">
-					<h4 class="card-title"><?= htmlspecialchars($data[$i]['title']); ?></h4>
-					<p class="card-text">
-						<?php
+	<div class="card row text-white bg-primary mb-3">
+		<div class="card-header">le <?= $data[$i]['date_fr']; ?></div>
+		<div class="card-body">
+			<h4 class="card-title"><?= htmlspecialchars($data[$i]['title']); ?></h4>
+			<p class="card-text">
+				<?php
 						$extract = substr($data[$i]['content'], 0, 200);
 						echo $extract . " ...";
 						?>
-						<div class="link-ReadMore">
-							<a class="text-white nav-link" href="index.php?action=post&amp;id=<?= $data[$i]['id']; ?>">Lire la suite ...</a>
-						</div>
-						<div class="img-posts w-50 mx-auto">
-							<img class="img-posts h-auto w-100" src="<?= $data[$i]['lien'];?>" alt="<?= $data[$i]['alt']; ?>"></img>
-						</div>
-					</p>
+				<div class="link-ReadMore">
+					<a class="text-white nav-link" href="index.php?action=post&amp;id=<?= $data[$i]['id']; ?>">Lire la
+						suite ...</a>
 				</div>
-			</div>
+				<div class="img-posts w-50 mx-auto">
+					<img class="img-posts h-auto w-100" src="<?= $data[$i]['lien'];?>"
+						alt="<?= $data[$i]['alt']; ?>"></img>
+				</div>
+			</p>
+		</div>
+	</div>
 	<?php
 		}
 	} ?>
-	</section>
+</section>
 
-	<?php
+<?php
 	if ($nbPage >= 2) {
 		?>
-		<div class="pagination text-right">
-  			<ul class="pagination pagination-sm">
-			  
+<div class="pagination text-right">
+	<ul class="pagination pagination-sm">
+
 		<?php
 				for ($i = 1; $i <= $nbPage; $i++) {
 					if ((!isset($_GET['page']) && $i == 1) || (isset($_GET['page']) && $_GET['page'] == $i)) {
 						?>
-						<li class="page-item disabled">
-						<?php
+		<li class="page-item disabled">
+			<?php
 						echo "<span class='cPageFrame page-link'>$i</span>"; ?>
-					  	</li>				
-				<?php	} else {
+		</li>
+		<?php	} else {
 					?>
-					<li class="page-item active"> <?php
+		<li class="page-item active"> <?php
 						echo "<a class='pageBlock page-link' href=\"index.php?page=$i\">$i</a>";?>
-					</li>
-				<?php	}
+		</li>
+		<?php	}
 				}
 			}
 		?>
-		</div>
+</div>
 
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
-

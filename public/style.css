@@ -118,6 +118,9 @@ text-align: center;
 /* ==              MEDIA 2                 */
 /*---------------------------------------- */
 @media screen and (min-width: 575px){
+  .container {
+    margin: auto;
+  }
   header h6 {
     font-size: 30px;
   }

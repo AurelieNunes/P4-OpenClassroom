@@ -83,9 +83,9 @@ function displaySubscribe() {
 function addMember($pseudo, $pass, $email) {
 	$memberManager = new MemberManager();
 
-	//$reCaptcha = $memberManager->getReCaptcha($_POST['g-recaptcha-response']);
+	$reCaptcha = $memberManager->getReCaptcha($_POST['g-recaptcha-response']);
 	
-	//if ($reCaptcha->success == true) {
+	if ($reCaptcha->success == true) {
 		$usernameValidity = $memberManager->checkPseudo($pseudo);
 		$mailValidity = $memberManager->checkMail($email);
 
@@ -107,11 +107,11 @@ function addMember($pseudo, $pass, $email) {
 			// redirige vers page d'accueil avec le nouveau paramètre
 			header('Location: index.php?account-status=account-successfully-created');
 		} 
-    //}
-    // else 
-    // {
-	// 	header('Location: index.php?action=subscribe&error=google-recaptcha');
-	// }
+    }
+    else 
+    {
+		header('Location: index.php?action=subscribe&error=google-recaptcha');
+	}
 }
 
 function displayLogin() {

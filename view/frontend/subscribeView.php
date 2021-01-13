@@ -2,8 +2,9 @@
 
 <?php ob_start(); ?>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <section id="subscribeFrame" class="h-50 mb-5">
-<?php 
+	<?php 
 if (isset($_GET['error']) && $_GET['error'] == 'invalidUsername') {
 	echo '<p id="error" class="alert alert-dismissible alert-danger text-center mx-auto">Pseudo déjà utilisé</p>';
 }
@@ -27,9 +28,12 @@ if (isset($_GET['error']) && $_GET['error'] == 'google-recaptcha') {
 			<input class="mb-2" type="password" name="pass_confirm" id="pass_confirm" required /><br />
 			<label for="mail">Adresse email</label><br />
 			<input class="mb-2" type="email" name="mail" id="mail" required /><br />
-			<input class="mb-2" type="submit" value="S'inscrire" />
-            <!-- <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
-			<div class="g-recaptcha" data-sitekey="6LedxgAaAAAAAOAprewvpCwnCMdxhqKK3NEQT82h"></div> -->
+			
+			<div class="g-recaptcha" data-sitekey="6LfJ9SoaAAAAAMNvIVTAGBHqRUV-l9PWdo7Ckpr2"></div>
+      <br/>
+	  <input class="mb-2" type="submit" value="S'inscrire" />
+			<!-- <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
+			<div class="g-recaptcha" data-sitekey="6LfJ9SoaAAAAAMNvIVTAGBHqRUV-l9PWdo7Ckpr2"></div> -->
 		</form>
 	</div>
 
@@ -43,11 +47,15 @@ if (isset($_GET['error']) && $_GET['error'] == 'google-recaptcha') {
 
 <?php require('template.php'); ?>
 
-<!-- <script src="https://www.google.com/recaptcha/api.js?render=ICI_LA_CLE_DU_SITE"></script>
 <script>
 grecaptcha.ready(function() {
-    grecaptcha.execute('ICI_LA_CLE_DU_SITE', {action: 'homepage'}).then(function(token) {
+    grecaptcha.execute('6LfJ9SoaAAAAAMNvIVTAGBHqRUV-l9PWdo7Ckpr2', {action: 'homepage'}).then(function(token) {
         document.getElementById('recaptchaResponse').value = token
     });
-}); -->
+});
+</script>
+<script type="text/javascript">
+  var onloadCallback = function() {
+    alert("grecaptcha is ready!");
+  };
 </script>

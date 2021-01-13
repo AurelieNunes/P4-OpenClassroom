@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,23 +7,24 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title><?= $title ?></title>
 	<meta name="description"
-        content="Jean Forteroche, le blog ! Ici vous trouverez mon histoire au fur et à mesure de mes aventures">
+		content="Jean Forteroche, le blog ! Ici vous trouverez mon histoire au fur et à mesure de mes aventures">
 
-    <meta name="author" content="NUNES Aurélie" />
+	<meta name="author" content="NUNES Aurélie" />
 
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary">
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary">
 
-    <!--Open Graph data -->
-    <meta property="og:title" content="Jean Forteroche, le blog !" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
+	<!--Open Graph data -->
+	<meta property="og:title" content="Jean Forteroche, le blog !" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="" />
 	<meta property="og:description" content="Ici vous trouverez mon histoire au fur et à mesure de mes aventures" />
-	
+
 	<!--Bootstrap -->
 	<link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css" />
 	<!-- Feuille CSS -->
 	<link rel="stylesheet" href="public/style.css" />
+</script>
 
 </head>
 
@@ -71,7 +70,7 @@
 </header>
 
 <body>
-	<div class="container" >
+	<div class="container">
 		<?= $content ?>
 	</div>
 
@@ -85,7 +84,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 	</script>
-	
+
 </body>
 <footer>
 
@@ -106,7 +105,7 @@
 		</ul>
 	</nav>
 
-	
+
 
 	<blockquote class="blockquote text-center">
 		<p class="mb-0 font-italic font-weight-light">Le confort nous éloigne de la personne que nous sommes. Il faut

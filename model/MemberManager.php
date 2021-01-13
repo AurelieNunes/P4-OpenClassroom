@@ -58,17 +58,17 @@ class MemberManager extends Manager
         return $deletedMember;
     }
 
-    // public function getSecretKey() {
-    //     $secretKey = '6LedxgAaAAAAAFPAcoizYyC0m1vs7g1vE_t5kjV2';
+    public function getSecretKey() {
+        $secretKey = '6LfJ9SoaAAAAANOjkJ85Iz6S9QX-C2Q16ptQWrWW';
 
-    //     return $secretKey;
-    // }
+        return $secretKey;
+    }
 
-    // public function getReCaptcha($token) {
-    //     $secretKey = $this->getSecretKey();
-    //     $request = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secretKey . '&response=' . $token . '');
-    //     $response = json_decode($request);
+    public function getReCaptcha($token) {
+        $secretKey = $this->getSecretKey();
+        $request = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secretKey . '&response=' . $token . '');
+        $response = json_decode($request);
 
-    //     return $response;
-    // }
+        return $response;
+    }
 }

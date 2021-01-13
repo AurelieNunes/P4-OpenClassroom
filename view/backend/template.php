@@ -8,19 +8,19 @@
 	<link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css" />
 	<title><?= $title ?></title>
 	<meta name="description"
-        content="Jean Forteroche, le blog ! Ici vous trouverez mon histoire au fur et à mesure de mes aventures">
+		content="Jean Forteroche, le blog ! Ici vous trouverez mon histoire au fur et à mesure de mes aventures">
 
-    <meta name="author" content="NUNES Aurélie" />
+	<meta name="author" content="NUNES Aurélie" />
 
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary">
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary">
 
-    <!--Open Graph data -->
-    <meta property="og:title" content="Jean Forteroche, le blog !" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
+	<!--Open Graph data -->
+	<meta property="og:title" content="Jean Forteroche, le blog !" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="" />
 	<meta property="og:description" content="Ici vous trouverez mon histoire au fur et à mesure de mes aventures" />
-	
+
 	<!--Bootstrap -->
 	<link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css" />
 	<!-- Feuille CSS -->
@@ -77,9 +77,9 @@
 </body>
 
 <footer class="w-100">
-		<p class="fictif small font-weight-light text-white bg-dark text-center mb-0">
-			Ce blog est fictif ! Projet réalisé pour Openclassrooms par Aurélie Nunes
-		</p>
+	<p class="fictif small font-weight-light text-white bg-dark text-center mb-0">
+		Ce blog est fictif ! Projet réalisé pour Openclassrooms par Aurélie Nunes
+	</p>
 </footer>
 
 </html>
