@@ -2,12 +2,34 @@
 
 html {
   width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
 }
 
 /**LOGINVIEW, SUBSCRIBEVIEW, POSTVIEW**/
-#loginFrame .form-group, #subscribeFrame .form-group, #commentForm form{
+#loginFrame .form-group, #commentForm form{
   width: 50%;
   margin: auto;
+}
+
+#loginFrame {
+  height: 350px;
+}
+
+#subscribeFrame .form-group {
+  width: 95%;
+  margin: auto;
+}
+
+.g-recaptcha {
+  width: 304px;
+}
+
+.g-recaptcha iframe {
+  width: 300px;
 }
 
 #success, #error {
@@ -52,10 +74,14 @@ text-align: center;
 
 /* ADMINVIEW */
 /* CREATE POST */
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
   width: unset;
   padding:0;
   margin:0;
+}
+
+.container {
+  width: unset;
 }
 
 #createPost {
@@ -112,6 +138,11 @@ text-align: center;
   .lead {
     font-size: 16px;
   }
+
+  #subscribeFrame .form-group {
+    width: 70%;
+    margin: auto;
+  }
 }
 
 /* ---------------------------------------- */
@@ -133,6 +164,11 @@ text-align: center;
     width: 80%;
     margin: auto;
 }
+
+  #subscribeFrame .form-group {
+    width: 45%;
+    margin: auto;
+  }
 }
 
 /* ---------------------------------------- */

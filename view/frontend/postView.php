@@ -26,7 +26,7 @@
         </div>
         <div class="card-body">
             <h4 class="card-title"><?= htmlspecialchars($post['title']) ?></h4>
-            <p class="card-text"><?= nl2br(htmlspecialchars($post['content'])) ?></p>
+            <p class="card-text"><?= htmlspecialchars($post['content']) ?></p>
             <div class="img-posts w-50 mx-auto">
                 <img class="img-posts h-auto w-100" src="<?= $post['lien'];?>" alt="<?= $post['alt']; ?>"></img>
             </div>
@@ -46,12 +46,12 @@
     <div class="modal-dialog mb-2" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title"><?= htmlspecialchars($comment['author']) ?></strong> le
-                    <?= $comment['comment_date_fr'] ?></h5>
+                <h5 class="modal-title"><?= htmlspecialchars($comment['author']) ?> le
+                    <?= htmlspecialchars($comment['comment_date_fr']) ?></h5>
 
             </div>
             <div class="modal-body">
-                <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+                <p><?= htmlspecialchars($comment['comment']) ?></p>
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
         }
     }
         ?>
-    <p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>
+    <p><?= htmlspecialchars($comment['comment']); ?></p>
 
     <?php
 	    if (!empty($_SESSION)) {

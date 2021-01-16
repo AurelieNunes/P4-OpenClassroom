@@ -22,7 +22,7 @@ $title = "Panel d'administration"; ?>
 		<h3>Gestion des Articles</h3>
 		<?php
 				if (isset($_GET['update-status']) && $_GET['update-status'] == 'success') {
-					echo '<p class="alert alert-dismissible alert-success text-center" id="success">L\'article a bient été modifié !<p>';
+					echo '<p class="alert alert-dismissible alert-success text-center" id="success">L\'article a bien été modifié !<p>';
 				}
 				elseif (isset($_GET['new-post']) && $_GET['new-post'] == 'success') {
 					echo '<p class="alert-dismissible alert-primary text-center" id="success">L\'article a bient été posté !<p>';

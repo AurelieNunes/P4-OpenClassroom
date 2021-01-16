@@ -4,7 +4,7 @@
 
 <section class="mt-5 mb-5" id="About">
     <div class="mypicture mx-auto">
-        <img src="public/images/Portrait.jpg" alt="homme avec bandeau et lunettes de soleil qui sourit" />
+        <img src="public/images/Portrait.jpg" alt="Jean Forterochie avec bandeau et lunettes de soleil qui sourit" />
     </div>
     <div class="pb-4" id="AboutMe">
         <h3>À propos de moi</h3>

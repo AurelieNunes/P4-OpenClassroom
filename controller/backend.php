@@ -9,11 +9,6 @@ use \blog\model\ReportManager;
 
 require_once './model/Manager.php';
 
-function displayLoginAdmin() 
-{
-	require('view/frontend/adminLoginView.php');
-}
-
 function loginAdmin() 
 {
 	if (isset($_POST['pass']) AND $_POST['pass'] == "TEST") {

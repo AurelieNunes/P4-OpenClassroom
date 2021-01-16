@@ -3,6 +3,9 @@
 <?php ob_start(); ?>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!-- Feuille CSS -->
+<link rel="stylesheet" href="public/style.css" />
+
 <section id="subscribeFrame" class="h-50 mb-5">
 	<?php 
 if (isset($_GET['error']) && $_GET['error'] == 'invalidUsername') {
@@ -28,13 +31,11 @@ if (isset($_GET['error']) && $_GET['error'] == 'google-recaptcha') {
 			<input class="mb-2" type="password" name="pass_confirm" id="pass_confirm" required /><br />
 			<label for="mail">Adresse email</label><br />
 			<input class="mb-2" type="email" name="mail" id="mail" required /><br />
-			
-			<div class="g-recaptcha" data-sitekey="6LfJ9SoaAAAAAMNvIVTAGBHqRUV-l9PWdo7Ckpr2"></div>
-      <br/>
-	  <input class="mb-2" type="submit" value="S'inscrire" />
-			<!-- <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
-			<div class="g-recaptcha" data-sitekey="6LfJ9SoaAAAAAMNvIVTAGBHqRUV-l9PWdo7Ckpr2"></div> -->
+
+	  
 		</form>
+		<div class="g-recaptcha" data-sitekey="6LfJ9SoaAAAAAMNvIVTAGBHqRUV-l9PWdo7Ckpr2"></div>
+		<input class="mb-2" type="submit" value="S'inscrire" />
 	</div>
 
 

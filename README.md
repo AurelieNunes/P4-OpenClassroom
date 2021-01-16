@@ -80,3 +80,12 @@ Créer un blog avec :
     - CSS
 
 //////////////////////////////////////////////////////////////////
+
+    8 eme commit =>
+
+    - Ajout Captcha
+    - Modification CSS
+    - Factorisation de index.php
+    - Création de ErrorView.php
+    - Modifications diverses
+
