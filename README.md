@@ -89,3 +89,19 @@ Créer un blog avec :
     - Création de ErrorView.php
     - Modifications diverses
 
+/////////////////////////////////////////////////////////////////
+
+    9 eme commit =>
+
+    - DRY
+    - Modification CSS
+    - Indentation
+
+/////////////////////////////////////////////////////////
+
+    Dernier commit =>
+
+    - Modification CSS
+    - Captcha V3
+    - Indentation
+    - Modification des vues

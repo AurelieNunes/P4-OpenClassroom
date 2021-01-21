@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <!-- Feuille CSS -->
 <link rel="stylesheet" href="public/style.css" />
 
@@ -22,7 +22,7 @@ if (isset($_GET['error']) && $_GET['error'] == 'google-recaptcha') {
 
 ?>
 	<div class="form-group mx-auto">
-		<form action="index.php?action=addMember" method="post">
+		<form id="form" action="index.php?action=addMember" method="post">
 			<label for="pseudo">Pseudo</label><br />
 			<input class="mb-2" type="text" name="pseudo" id="pseudo" required /><br />
 			<label for="pass">Mot de passe</label><br />
@@ -31,32 +31,19 @@ if (isset($_GET['error']) && $_GET['error'] == 'google-recaptcha') {
 			<input class="mb-2" type="password" name="pass_confirm" id="pass_confirm" required /><br />
 			<label for="mail">Adresse email</label><br />
 			<input class="mb-2" type="email" name="mail" id="mail" required /><br />
+			<button class="g-recaptcha" data-sitekey="6LdvMDMaAAAAAMMi7ddDgVzQ_4PfUSUQ23oRTC1T" data-callback='onSubmit'
+				data-action='submit'>S'inscrire</button>
 
-	  
 		</form>
-		<div class="g-recaptcha" data-sitekey="6LfJ9SoaAAAAAMNvIVTAGBHqRUV-l9PWdo7Ckpr2"></div>
-		<input class="mb-2" type="submit" value="S'inscrire" />
-	</div>
-
-
-
-
 </section>
+
 
 
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
-
 <script>
-grecaptcha.ready(function() {
-    grecaptcha.execute('6LfJ9SoaAAAAAMNvIVTAGBHqRUV-l9PWdo7Ckpr2', {action: 'homepage'}).then(function(token) {
-        document.getElementById('recaptchaResponse').value = token
-    });
-});
-</script>
-<script type="text/javascript">
-  var onloadCallback = function() {
-    alert("grecaptcha is ready!");
-  };
+	function onSubmit(token) {
+		document.getElementById("form").submit();
+	}
 </script>

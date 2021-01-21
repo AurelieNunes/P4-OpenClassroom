@@ -1,18 +1,17 @@
 /* GLOBAL */
 
-html {
+body {
   width: 100%;
-  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  height: 100%;
-}
+/** VIEWS FRONTEND **/
 
 /**LOGINVIEW, SUBSCRIBEVIEW, POSTVIEW**/
-#loginFrame .form-group, #commentForm form{
+#loginFrame .form-group,
+#commentForm form {
   width: 50%;
-  margin: auto;
 }
 
 #loginFrame {
@@ -21,87 +20,75 @@ body {
 
 #subscribeFrame .form-group {
   width: 95%;
-  margin: auto;
 }
 
 .g-recaptcha {
-  width: 304px;
+  width: 282px;
+  display: flex;
+  justify-content: center;
 }
 
-.g-recaptcha iframe {
+.g-recaptcha div {
   width: 300px;
 }
 
-#success, #error {
+.g-recaptcha iframe {
+  width: 305px;
+}
+
+#success,
+#error {
   padding: 0;
 }
 
-/* HOMEVIEW */
-.pagination {
-  justify-content: flex-end;
-}
-
 /* TEMPLATES */
-/* Footer */
-footer h5 {
-  font-size:16px;
-  margin-bottom: 0;
+
+.logoHeader {
+  width: 10%;
+  height: auto;
+  display: flex;
 }
 
-footer .navbar {
-padding: 0;
+.logoHeader img {
+  width: 100%;
 }
 
-footer .navbar-nav {
-flex-direction: column;
-text-align: center;
+.navbar-brand {
+  width: 65%;
+  text-align: center;
 }
 
-/* TEMPLATE FRONTEND */
 .part-front {
-  background : url('images/img-accueil-re.jpg');  
+  background: url('images/img-accueil-re.jpg');
   background-size: cover;
 }
 
-/* Citation */
 .lead {
   font-size: 12px;
 }
 
+.pagination {
+  justify-content: flex-end;
+}
+
+/* Footer */
+footer h5 {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+footer .navbar {
+  padding: 0;
+}
+
+footer .navbar-nav {
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Blocquote */
 .blockquote {
   font-size: 14px;
-}
-
-/* ADMINVIEW */
-/* CREATE POST */
-.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
-  width: unset;
-  padding:0;
-  margin:0;
-}
-
-.container {
-  width: unset;
-}
-
-#createPost {
-  width: 100%;
-  margin: auto;
-}
-
-#createPost h1, #managerBlock {
-  width: min-content;
-  margin: auto;
-}
-/* PART MEMBERMANAGER */
-#memberManage table tr td .btn {
-  padding-left: 3px;
-  padding-right: 3px;
-}
-
-/* COMMENT MANAGE */
-#commentManage .card{
-  margin: auto;
 }
 
 /* ABOUTMEVIEW */
@@ -121,6 +108,31 @@ text-align: center;
 }
 
 
+/** VIEWS BACKEND */
+
+/* ADMINVIEW */
+/* CREATE POST */
+
+#adminPanel .jumbotron h1 p {
+  font-size: 30px;
+}
+
+#createPost {
+  width: 100%;
+}
+
+/* COMMENT MANAGE */
+#commentManage .report .card .card-body .btnModal {
+  display: flex;
+  margin: auto;
+}
+
+/* MEMBERMANAGER */
+#memberManage table {
+  display: flex;
+  justify-content: center;
+}
+
 /* ---------------------------------------- */
 /* ==               MEDIAS                  */
 /*                  QUERIES                 */
@@ -130,62 +142,79 @@ text-align: center;
 /* ==              MEDIA 1                 */
 /*---------------------------------------- */
 
-@media screen and (min-width: 375px){
-  header h6 {
-    font-size: 20px;
+@media screen and (min-width: 425px) {
+
+  /* Subscribe */
+  #subscribeFrame {
+    height: 380px !important;
   }
 
-  .lead {
-    font-size: 16px;
-  }
-
-  #subscribeFrame .form-group {
-    width: 70%;
+  #subscribeFrame #form {
     margin: auto;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .g-recaptcha {
+    margin: auto;
+  }
+
+  /* Login */
+
+  #loginFrame {
+    height: 420px !important;
+  }
+
+  #loginFrame .form-group {
+    padding-top: 50px;
   }
 }
 
 /* ---------------------------------------- */
 /* ==              MEDIA 2                 */
 /*---------------------------------------- */
-@media screen and (min-width: 575px){
-  .container {
-    margin: auto;
-  }
+@media screen and (min-width: 575px) {
+
+  /* Home */
   header h6 {
     font-size: 30px;
   }
-  
+
   .lead {
     font-size: 20px;
   }
 
+  /* CreatePost */
   #createPost {
     width: 80%;
     margin: auto;
-}
+  }
 
+  /* Subscribe - login */
   #subscribeFrame .form-group {
     width: 45%;
     margin: auto;
   }
+
+  #loginFrame .form-group {
+    width: 35%;
+  }
 }
 
 /* ---------------------------------------- */
-/* ==              MEDIA 3                 */
+/* ==              MEDIA 4                 */
 /*---------------------------------------- */
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
 
-/* ADMIN VIEW */
-  #adminPanel .headPost{
+  /* ADMIN VIEW */
+  #adminPanel .headPost {
     width: 80%;
     margin: auto;
   }
-/* CREATE POST */
-  .container, .container-md, .container-sm {
-      max-width: unset;
-  }
-  #createPost h1, #managerBlock {
+
+  /*CreatePost , UpdatePost */
+  #createPost h1,
+  #managerBlock {
     width: 80%;
     margin: auto;
   }
@@ -197,17 +226,47 @@ text-align: center;
   #updateBlock form textarea {
     width: 100%;
   }
-/* LOGINVIEW, SUBSCRIBEVIEW, POSTVIEW */
-  #loginFrame .form-group, #subscribeFrame .form-group, #commentForm form {
+
+  /* LOGINVIEW, SUBSCRIBEVIEW, POSTVIEW */
+  #loginFrame .form-group,
+  #subscribeFrame .form-group,
+  #commentForm form {
     width: 25%;
   }
+
+  .g-recaptcha {
+    width: unset;
+    display: unset;
+    justify-content: unset;
   }
 
-/* ---------------------------------------- */
-/* ==              MEDIA 4                 */
-/*---------------------------------------- */
-@media screen and (min-width: 1024px){
+  #loginFrame {
+    height: 470px;
+  }
+}
 
+/* ---------------------------------------- */
+/* ==              MEDIA 5                 */
+/*---------------------------------------- */
+@media screen and (min-width: 992px) {
+
+  .logo {
+    width: 10%;
+  }
+
+  .navbar-brand {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+/* ---------------------------------------- */
+/* ==              MEDIA 6                 */
+/*---------------------------------------- */
+@media screen and (min-width: 1024px) {
+
+  /* Home */
   .listPosts {
     display: flex;
     flex-wrap: wrap;
@@ -219,6 +278,7 @@ text-align: center;
     margin-top: 0;
   }
 
+  /* footer */
   footer .navbar-nav {
     flex-direction: row;
     justify-content: space-around;
@@ -234,5 +294,51 @@ text-align: center;
   #memberManage td {
     width: 200px;
   }
+}
 
+/* ---------------------------------------- */
+/* ==              MEDIA 7                 */
+/*---------------------------------------- */
+@media screen and (min-width: 1440px) {
+
+  /* Home */
+  #navbarColor01 ul li a {
+    font-size: 22px;
+  }
+
+  #navbarColor01 ul li p {
+    font-size: 22px;
+  }
+
+  /* Subscribe - Login */
+  #subscribeFrame {
+    margin: 60px;
+    height: 450px !important;
+  }
+
+  #subscribeFrame #form label {
+    font-size: 20px;
+  }
+
+  #loginFrame {
+    height: 450px !important;
+  }
+
+  #loginFrame .form-group {
+    margin-top: 100px;
+  }
+
+  #loginFrame .form-group form label {
+    font-size: 20px;
+  }
+
+  #mail,
+  .g-recaptcha {
+    margin-bottom: 10px;
+  }
+
+  /* footer */
+  .footer {
+    padding-top: 34px;
+  }
 }

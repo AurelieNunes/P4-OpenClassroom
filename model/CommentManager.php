@@ -15,7 +15,7 @@ class CommentManager extends Manager
         return $comments;
     }
 
-    //Ajout d'un commentaire
+        //Ajout d'un commentaire
         public function postComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
@@ -26,7 +26,7 @@ class CommentManager extends Manager
     }
 
 
-    //Suppression d'un commentaire
+        //Suppression d'un commentaire
         public function deleteComment($commentId) 
     {
 

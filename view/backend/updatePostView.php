@@ -10,10 +10,10 @@ $title = "Panneau d'administration"; ?>
 
 		<p class="returnLink"><a href="index.php?action=admin">Retour au menu</a></p>
 		<div id="updateBlock">
-			<form action="index.php?action=submitUpdate&amp;id=<?= $post['id']; ?>" method="post">
+			<form action="index.php?action=submitUpdate&amp;id=<?= intval($post['id']); ?>" method="post">
 				<label for="title">Titre : </label>
-				<input type="text" name="title" id="title" value="<?= $post['title'];?>" /><br />
-				<textarea name="content" rows="40" cols="40"><?= nl2br($post['content']);?></textarea>
+				<input type="text" name="title" id="title" value="<?= htmlspecialchars($post['title']);?>" /><br />
+				<textarea name="content" rows="40" cols="40"><?= htmlspecialchars($post['content']);?></textarea>
 				<input class="mb-5" type="submit" value="Poster" />
 			</form>
 		</div>

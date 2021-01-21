@@ -69,9 +69,10 @@
     <?php
 	    if (!empty($_SESSION)) {
         ?>
-    <div id="commentForm" class="pb-5 pt-5">
+    <div id="commentForm" class="pb-5 pt-5 mx-auto">
         <p class="text-center">N'hésitez pas à me laisser un commentaire !</p>
-        <form class="mx-auto" action="index.php?action=addComment&amp;id=<?= htmlspecialchars ($post['id']) ?>" method="post">
+        <form class="mx-auto" action="index.php?action=addComment&amp;id=<?= htmlspecialchars ($post['id']) ?>"
+            method="post">
             <label for="comment">Commentaire :</label></br>
             <textarea id="comment" name="comment"></textarea>
             </br>

@@ -59,7 +59,7 @@ class MemberManager extends Manager
     }
 
     public function getSecretKey() {
-        $secretKey = '6LfJ9SoaAAAAANOjkJ85Iz6S9QX-C2Q16ptQWrWW';
+        $secretKey = '6LdvMDMaAAAAADzXnEMJ7wCbHndRu9fTVh3CO9Eu';
 
         return $secretKey;
     }

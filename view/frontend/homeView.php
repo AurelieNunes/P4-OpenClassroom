@@ -35,9 +35,9 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
 			<h4 class="card-title"><?= htmlspecialchars($data[$i]['title']); ?></h4>
 			<p class="card-text">
 				<?php
-						$extract = substr($data[$i]['content'], 0, 200);
-						echo $extract . " ...";
-						?>
+							$extract = substr($data[$i]['content'], 0, 200);
+							echo $extract . " ...";
+							?>
 				<div class="link-ReadMore">
 					<a class="text-white nav-link" href="index.php?action=post&amp;id=<?= $data[$i]['id']; ?>">Lire la
 						suite ...</a>
